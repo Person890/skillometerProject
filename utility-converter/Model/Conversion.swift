@@ -11,10 +11,13 @@ import UIKit
 class Conversion {
     let name: String
     let icon: UIImage
+    let segueID: String
     
-    init(name: String, icon: UIImage) {
+    
+    init(name: String, icon: UIImage, segueID: String) {
         self.name = name
         self.icon = icon
+        self.segueID = segueID
     }
     
     func getConversionName() -> String {
@@ -23,5 +26,9 @@ class Conversion {
     
     func getConversionIcon() -> UIImage {
         return icon
+    }
+    
+    func getSegueID() -> String {
+        return segueID
     }
 }
