@@ -20,12 +20,12 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
     
     
     func generateConversions() {
-        let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion")
-        let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion")
-        let volume = Conversion(name: "Volume", icon: UIImage(named: "ic_volume")!, segueID: "goToVolumeConversion")
-        let liquidVolumes = Conversion(name: "Liquid Volume", icon: UIImage(named: "ic_liquid")!, segueID: "goToLiquidVolumeConversion")
-        let distance = Conversion(name: "Distance", icon: UIImage(named: "ic_distance")!, segueID: "goToDistanceConversion")
-        let speed = Conversion(name: "Speed", icon: UIImage(named: "ic_speed")!, segueID: "goToSpeedConversion")
+        let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let volume = Conversion(name: "Volume", icon: UIImage(named: "ic_volume")!, segueID: "goToVolumeConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let liquidVolumes = Conversion(name: "Liquid Volume", icon: UIImage(named: "ic_liquid")!, segueID: "goToLiquidVolumeConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let distance = Conversion(name: "Distance", icon: UIImage(named: "ic_distance")!, segueID: "goToDistanceConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let speed = Conversion(name: "Speed", icon: UIImage(named: "ic_speed")!, segueID: "goToSpeedConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
         
         conversions += [weight, temperature, volume, liquidVolumes, distance, speed]
     }
@@ -39,9 +39,10 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         cell.conversionName.text = conversions[indexPath.row].getConversionName()
         cell.conversionIcon.image = conversions[indexPath.row].getConversionIcon()
         
-        //This creates the shadows and modifies the cards a little bit
-        cell.contentView.layer.cornerRadius = 8.0
-        cell.contentView.layer.borderWidth = 0.5
+        //Card(cell) styles
+        cell.contentView.backgroundColor = conversions[indexPath.row].getCellColour()
+        cell.contentView.layer.cornerRadius = 10.0
+        cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.00).cgColor
         cell.contentView.layer.masksToBounds = false
         
