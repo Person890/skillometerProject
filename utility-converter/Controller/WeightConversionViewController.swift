@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeightConversionViewController: UIViewController, UITextFieldDelegate {
+class WeightConversionViewController: UIViewController {
     
     @IBOutlet weak var kilogramTextField: UITextField!
     @IBOutlet weak var gramTextField: UITextField!
@@ -19,7 +19,6 @@ class WeightConversionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
