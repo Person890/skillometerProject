@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConvertViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ConvertionsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var conversions = [Conversion]()
     
@@ -19,12 +19,12 @@ class ConvertViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func generateConversions() {
-        let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!)
-        let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!)
-        let volume = Conversion(name: "Volume", icon: UIImage(named: "ic_volume")!)
-        let liquidVolumes = Conversion(name: "Liquid Volume", icon: UIImage(named: "ic_liquid")!)
-        let distance = Conversion(name: "Distance", icon: UIImage(named: "ic_distance")!)
-        let speed = Conversion(name: "Speed", icon: UIImage(named: "ic_speed")!)
+        let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion")
+        let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion")
+        let volume = Conversion(name: "Volume", icon: UIImage(named: "ic_volume")!, segueID: "goToVolumeConversion")
+        let liquidVolumes = Conversion(name: "Liquid Volume", icon: UIImage(named: "ic_liquid")!, segueID: "goToLiquidVolumeConversion")
+        let distance = Conversion(name: "Distance", icon: UIImage(named: "ic_distance")!, segueID: "goToDistanceConversion")
+        let speed = Conversion(name: "Speed", icon: UIImage(named: "ic_speed")!, segueID: "goToSpeedConversion")
         
         conversions += [weight, temperature, volume, liquidVolumes, distance, speed]
     }
@@ -45,6 +45,10 @@ class ConvertViewController: UIViewController, UICollectionViewDataSource, UICol
         cell.contentView.layer.masksToBounds = false
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: conversions[indexPath.row].getSegueID(), sender: self)
     }
 }
 

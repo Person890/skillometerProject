@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		BF5BB5B922483D2F0034705A /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5B822483D2F0034705A /* Conversion.swift */; };
 		BF5BB5BD224846860034705A /* ConversionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5BC224846860034705A /* ConversionViewCell.swift */; };
+		BF5BB5BF22485AAF0034705A /* WeightConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5BE22485AAF0034705A /* WeightConversionViewController.swift */; };
+		BF5BB5C1224860FE0034705A /* TemperatureConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C0224860FE0034705A /* TemperatureConversionViewController.swift */; };
+		BF5BB5C32248610F0034705A /* VolumeConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C22248610F0034705A /* VolumeConversionViewController.swift */; };
+		BF5BB5C5224861230034705A /* LiquidVolumeConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C4224861230034705A /* LiquidVolumeConversionViewController.swift */; };
+		BF5BB5C7224861330034705A /* DistanceConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C6224861330034705A /* DistanceConversionViewController.swift */; };
+		BF5BB5C92248614C0034705A /* SpeedConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C82248614C0034705A /* SpeedConversionViewController.swift */; };
 		BFADCD7B224050B3003644E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7A224050B3003644E0 /* AppDelegate.swift */; };
-		BFADCD7D224050B3003644E0 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7C224050B3003644E0 /* ConvertViewController.swift */; };
+		BFADCD7D224050B3003644E0 /* ConvertionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7C224050B3003644E0 /* ConvertionsViewController.swift */; };
 		BFADCD7F224050B3003644E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7E224050B3003644E0 /* SecondViewController.swift */; };
 		BFADCD82224050B3003644E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFADCD80224050B3003644E0 /* Main.storyboard */; };
 		BFADCD84224050B5003644E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFADCD83224050B5003644E0 /* Assets.xcassets */; };
@@ -20,9 +26,15 @@
 /* Begin PBXFileReference section */
 		BF5BB5B822483D2F0034705A /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		BF5BB5BC224846860034705A /* ConversionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewCell.swift; sourceTree = "<group>"; };
+		BF5BB5BE22485AAF0034705A /* WeightConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConversionViewController.swift; sourceTree = "<group>"; };
+		BF5BB5C0224860FE0034705A /* TemperatureConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConversionViewController.swift; sourceTree = "<group>"; };
+		BF5BB5C22248610F0034705A /* VolumeConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeConversionViewController.swift; sourceTree = "<group>"; };
+		BF5BB5C4224861230034705A /* LiquidVolumeConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidVolumeConversionViewController.swift; sourceTree = "<group>"; };
+		BF5BB5C6224861330034705A /* DistanceConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConversionViewController.swift; sourceTree = "<group>"; };
+		BF5BB5C82248614C0034705A /* SpeedConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedConversionViewController.swift; sourceTree = "<group>"; };
 		BFADCD77224050B3003644E0 /* utility-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "utility-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFADCD7A224050B3003644E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFADCD7C224050B3003644E0 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
+		BFADCD7C224050B3003644E0 /* ConvertionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertionsViewController.swift; sourceTree = "<group>"; };
 		BFADCD7E224050B3003644E0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BFADCD81224050B3003644E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFADCD83224050B5003644E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +72,13 @@
 		BF5BB5B62248284A0034705A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BFADCD7C224050B3003644E0 /* ConvertViewController.swift */,
+				BFADCD7C224050B3003644E0 /* ConvertionsViewController.swift */,
+				BF5BB5BE22485AAF0034705A /* WeightConversionViewController.swift */,
+				BF5BB5C0224860FE0034705A /* TemperatureConversionViewController.swift */,
+				BF5BB5C22248610F0034705A /* VolumeConversionViewController.swift */,
+				BF5BB5C4224861230034705A /* LiquidVolumeConversionViewController.swift */,
+				BF5BB5C6224861330034705A /* DistanceConversionViewController.swift */,
+				BF5BB5C82248614C0034705A /* SpeedConversionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,11 +194,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5BB5BF22485AAF0034705A /* WeightConversionViewController.swift in Sources */,
 				BFADCD7F224050B3003644E0 /* SecondViewController.swift in Sources */,
 				BF5BB5B922483D2F0034705A /* Conversion.swift in Sources */,
+				BF5BB5C7224861330034705A /* DistanceConversionViewController.swift in Sources */,
 				BFADCD7B224050B3003644E0 /* AppDelegate.swift in Sources */,
-				BFADCD7D224050B3003644E0 /* ConvertViewController.swift in Sources */,
+				BF5BB5C32248610F0034705A /* VolumeConversionViewController.swift in Sources */,
+				BFADCD7D224050B3003644E0 /* ConvertionsViewController.swift in Sources */,
+				BF5BB5C1224860FE0034705A /* TemperatureConversionViewController.swift in Sources */,
 				BF5BB5BD224846860034705A /* ConversionViewCell.swift in Sources */,
+				BF5BB5C92248614C0034705A /* SpeedConversionViewController.swift in Sources */,
+				BF5BB5C5224861230034705A /* LiquidVolumeConversionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
