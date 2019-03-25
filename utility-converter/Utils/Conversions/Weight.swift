@@ -6,43 +6,83 @@
 //  Copyright © 2019 Brion Silva. All rights reserved.
 //
 
-enum Weight: Int {
-    case kilograms = 0, grams, ounces, pounds, stonePounds
+import Foundation
+
+enum WeightUnit {
+    case kilogram
+    case gram
+    case ounce
+    case pound
+    case stone
     
-    func convert(unit to: Weight, output val: Double) -> Double {
-        var output = 0.0
-        switch self {
-        case .kilograms:
-            if to == .grams {
-                output = 1000 * val
-            }
-        case .grams:
-            if to == .kilograms {
-                output = val / 1000
-            }
-        case .ounces:
-            output = 0.0
-        case .pounds:
-            output = 0.0
-        case .stonePounds:
-            output = 0.0
-        }
-        return output
+    static let getAllUnits = [kilogram, gram, ounce, pound, stone]
+}
+
+struct Weight {
+    let value: Double
+    let unit: WeightUnit
+    
+    init(unit: WeightUnit, value: Double) {
+        self.value = value
+        self.unit = unit
     }
     
-    static func fromString(_ string: String) -> Weight? {
-        if string == "kilograms" {
-            return .kilograms
-        } else if string == "grams" {
-            return .grams
-        } else if string == "ounces" {
-            return .ounces
-        } else if string == "pounds" {
-            return .pounds
-        } else if string == "stonePounds" {
-            return .stonePounds
-        } else {
-            return nil
+    func convert(unit to: WeightUnit) -> Double {
+        var output = 0.0
+        
+        switch unit {
+        case .kilogram:
+            if to == .gram {
+                output = value * 1000
+            } else if to == .ounce {
+                output = value * 35.274
+            } else if to == .pound {
+                output = value * 2.20462
+            } else if to == .stone {
+                output = value / 6.35029318
+            }
+        case .gram:
+            if to == .kilogram {
+                output = value / 1000
+            } else if to == .ounce {
+                output = value / 28.35
+            } else if to == .pound {
+                output = value / 453.592
+            } else if to == .stone {
+                output = value / 6350.293
+            }
+        case .ounce:
+            if to == .kilogram {
+                output = value / 35.274
+            } else if to == .gram {
+                output = value * 28.35
+            } else if to == .pound {
+                output = value / 16
+            } else if to == .stone {
+                output = value / 224
+            }
+        case .pound:
+            if to == .kilogram {
+                output = value / 2.205
+            } else if to == .gram {
+                output = value * 453.592
+            } else if to == .ounce {
+                output = value * 16
+            } else if to == .stone {
+                output = value / 14
+            }
+        case .stone:
+            if to == .kilogram {
+                output = value * 6.35
+            } else if to == .gram {
+                output = value * 6350.293
+            } else if to == .pound {
+                output = value *  14
+            } else if to == .ounce {
+                output = value * 224
+            }
         }
+        
+        return output
     }
 }
