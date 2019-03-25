@@ -18,6 +18,7 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         generateConversions()
     }
     
+    
     func generateConversions() {
         let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion")
         let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion")
@@ -41,7 +42,7 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         //This creates the shadows and modifies the cards a little bit
         cell.contentView.layer.cornerRadius = 8.0
         cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.00).cgColor
+        cell.contentView.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.00).cgColor
         cell.contentView.layer.masksToBounds = false
         
         return cell

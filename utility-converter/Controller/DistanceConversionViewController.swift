@@ -6,4 +6,12 @@
 //  Copyright © 2019 Brion Silva. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DistanceConversionViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+}
