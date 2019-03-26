@@ -50,6 +50,10 @@ class TemperatureConversionViewController: UIViewController {
         updateTextFields(textField: textField!, unit: unit)
     }
     
+    @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
+        print("Save Temperature")
+    }
+    
     func updateTextFields(textField: UITextField, unit: TemperatureUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {

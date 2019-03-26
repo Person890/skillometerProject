@@ -80,6 +80,10 @@ class DistanceConversionViewController: UIViewController {
         updateTextFields(textField: textField!, unit: unit)
     }
     
+    @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
+        print("Save Distance")
+    }
+    
     func updateTextFields(textField: UITextField, unit: DistanceUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {

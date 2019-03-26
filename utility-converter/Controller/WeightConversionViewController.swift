@@ -74,6 +74,10 @@ class WeightConversionViewController: UIViewController {
         updateTextFields(textField: textField!, unit: unit)
     }
     
+    @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
+        print("Save Weight")
+    }
+    
     func updateTextFields(textField: UITextField, unit: WeightUnit) -> Void {
         if let input = textField.text {
             if input.isEmpty {

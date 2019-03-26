@@ -186,7 +186,13 @@
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7IT-vo-XCx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Temperature" id="hkb-5i-wqM"/>
+                    <navigationItem key="navigationItem" title="Temperature" id="hkb-5i-wqM">
+                        <barButtonItem key="rightBarButtonItem" title="Save Nav Button" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="WBK-cu-f3t">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="Ut6-oT-akK" id="r66-f7-Pgz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="celsiusTextField" destination="FDj-am-e0E" id="4XA-Ta-Ec9"/>
                         <outlet property="fahrenheitTextField" destination="ld4-KA-n3P" id="0nQ-s7-U8Z"/>
@@ -306,7 +312,13 @@
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PUp-o6-wEO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Volume" id="HYD-vZ-XCa"/>
+                    <navigationItem key="navigationItem" title="Volume" id="HYD-vZ-XCa">
+                        <barButtonItem key="rightBarButtonItem" title="Save Nav Button" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="4Ah-Vy-dMc">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="66V-sH-fSN" id="z5d-Nh-bwV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fluidOunceTextField" destination="Lej-An-XHh" id="Otb-9D-uz0"/>
                         <outlet property="gallonTextField" destination="ekd-aL-ybk" id="CEZ-xL-Zb7"/>
@@ -446,7 +458,13 @@
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Qf-IK-KJT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Distance" id="rWp-2n-cAU"/>
+                    <navigationItem key="navigationItem" title="Distance" id="rWp-2n-cAU">
+                        <barButtonItem key="rightBarButtonItem" title="Save Nav Button" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="JWl-ey-hBp">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="Xsv-8B-xPR" id="iYC-fk-eVC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="centimeterTextField" destination="vcz-EE-fnU" id="2SG-5c-gyv"/>
                         <outlet property="inchTextField" destination="Bsi-Om-hSe" id="g9T-Np-ig2"/>
@@ -551,7 +569,13 @@
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="k5w-zr-wpK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Speed" id="7Yx-fP-UOs"/>
+                    <navigationItem key="navigationItem" title="Speed" id="7Yx-fP-UOs">
+                        <barButtonItem key="rightBarButtonItem" title="Save Nav Button" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="Pio-f9-q8w">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="9ed-Ze-bVg" id="gBq-h1-uEI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="kmhTextField" destination="h6U-DO-bwu" id="D2W-jq-xmt"/>
                         <outlet property="knTextField" destination="B3G-LY-tp0" id="3oz-g0-KQS"/>
@@ -563,26 +587,10 @@
             </objects>
             <point key="canvasLocation" x="2276" y="-47"/>
         </scene>
-        <!--Save-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Save" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="cPa-gy-q4n"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1202" y="-335"/>
-        </scene>
         <!--History-->
         <scene sceneID="wJo-JU-5Do">
             <objects>
-                <viewController id="ltg-Ro-xpP" sceneMemberID="viewController">
+                <viewController id="ltg-Ro-xpP" customClass="HistoryViewController" customModule="utility_converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Miv-YJ-bC2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +606,7 @@
         <!--Constants-->
         <scene sceneID="drp-dq-MIU">
             <objects>
-                <viewController id="Akb-Fj-kD2" sceneMemberID="viewController">
+                <viewController id="Akb-Fj-kD2" customClass="ConstantsViewController" customModule="utility_converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YGj-P4-0Mz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,12 +617,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TF9-Ag-H9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="1223"/>
+            <point key="canvasLocation" x="1279" y="1407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="utility_converter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -623,7 +631,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Fbi-PF-GiZ" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="ltg-Ro-xpP" kind="relationship" relationship="viewControllers" id="kX2-S0-0LE"/>
                         <segue destination="Akb-Fj-kD2" kind="relationship" relationship="viewControllers" id="pwj-Yg-ZXL"/>
                     </connections>
@@ -651,7 +658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avW-4x-zdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="-1127.5862068965519"/>
+            <point key="canvasLocation" x="1222" y="-677"/>
         </scene>
         <!--Weight-->
         <scene sceneID="qNI-xZ-uc7">
@@ -786,7 +793,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gei-Ep-sad"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Weight" id="LPc-fe-8p8"/>
+                    <navigationItem key="navigationItem" title="Weight" id="LPc-fe-8p8">
+                        <barButtonItem key="rightBarButtonItem" title="Save Nav Button" image="ic_save_portarait" landscapeImage="ic_save_lanscape" id="jx6-d3-Omc">
+                            <connections>
+                                <action selector="handleSaveButtonClick:" destination="4CW-L2-S2i" id="yar-Bh-SoP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gramTextField" destination="x48-2K-XPe" id="sZ2-Dh-6o1"/>
                         <outlet property="kilogramTextField" destination="OcU-XB-4xd" id="B2H-Uc-Ul6"/>
