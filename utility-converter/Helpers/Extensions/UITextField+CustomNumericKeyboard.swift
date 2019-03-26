@@ -31,24 +31,21 @@ extension UITextField: CustomNumericKeyboardDelegate {
     // MARK: - NumericKeyboardDelegate methods
     
     internal func numericKeyPressed(key: Int) {
-        self.text?.append("\(key)")
+        self.insertText(String(key))
         numericKeyboardDelegate?.numericKeyPressed(key: key)
     }
     
     internal func numericBackspacePressed() {
-        if var text = self.text, text.count > 0 {
-            _ = text.remove(at: text.index(before: text.endIndex))
-            self.text = text
-        }
+        self.deleteBackward()
         numericKeyboardDelegate?.numericBackspacePressed()
     }
     
     internal func numericSymbolPressed(symbol: String) {
-        self.text?.append(symbol)
+        self.insertText(String(symbol))
         numericKeyboardDelegate?.numericSymbolPressed(symbol: symbol)
     }
     
     internal func retractKeyPressed() {
-        print("close keyboard")
+        numericKeyboardDelegate?.retractKeyPressed()
     }
 }

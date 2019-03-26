@@ -10,12 +10,15 @@ import UIKit
 
 class WeightConversionViewController: UIViewController, CustomNumericKeyboardDelegate {
 
+    @IBOutlet weak var weightViewScroller: UIScrollView!
     @IBOutlet weak var kilogramTextField: UITextField!
     @IBOutlet weak var gramTextField: UITextField!
     @IBOutlet weak var ounceTextField: UITextField!
     @IBOutlet weak var poundTextField: UITextField!
     @IBOutlet weak var stoneTextField: UITextField!
     @IBOutlet weak var stonePoundTextField: UITextField!
+    
+    var keyBoardHeight:CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +34,37 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         
         gramTextField.borderStyle = UITextField.BorderStyle.roundedRect
         gramTextField._lightPlaceholderColor(UIColor.lightText)
+        gramTextField.setAsNumericKeyboard(delegate: self)
         
         ounceTextField.borderStyle = UITextField.BorderStyle.roundedRect
         ounceTextField._lightPlaceholderColor(UIColor.lightText)
+        ounceTextField.setAsNumericKeyboard(delegate: self)
         
         poundTextField.borderStyle = UITextField.BorderStyle.roundedRect
         poundTextField._lightPlaceholderColor(UIColor.lightText)
+        poundTextField.setAsNumericKeyboard(delegate: self)
         
         stoneTextField.borderStyle = UITextField.BorderStyle.roundedRect
         stoneTextField._lightPlaceholderColor(UIColor.lightText)
+        stoneTextField.setAsNumericKeyboard(delegate: self)
         
         stonePoundTextField.borderStyle = UITextField.BorderStyle.roundedRect
         stonePoundTextField._lightPlaceholderColor(UIColor.lightText)
+        stonePoundTextField.setAsNumericKeyboard(delegate: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as?
+            NSValue)?.cgRectValue {
+            self.keyBoardHeight = keyboardSize.height
+        }
+        
+        UIView.animate(withDuration: 0.25, animations: {() -> Void in
+            self.weightViewScroller.frame = CGRect(x: 0, y: 0, width: (self.weightViewScroller?.frame.width)!, height: ((self.weightViewScroller?.frame.height)! - self.keyBoardHeight + 49))
+        })
     }
     
     @IBAction func handleKilogramTextFieldChange(_ textField: UITextField) {
