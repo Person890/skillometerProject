@@ -45,132 +45,62 @@ class DistanceConversionViewController: UIViewController {
     }
     
     @IBAction func handleMeterTextFieldChange(_ textField: UITextField) {
-        if let input = meterTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = DistanceUnit.meter
-                let meterValue = Distance(unit: unit, value: value)
-                
-                for _unit in DistanceUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = meterValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = meterTextField
+        let unit = DistanceUnit.meter
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleCentimeterTextFieldChange(_ textField: UITextField) {
-        if let input = centimeterTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = DistanceUnit.centimeter
-                let centimeterValue = Distance(unit: unit, value: value)
-                
-                for _unit in DistanceUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = centimeterValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = centimeterTextField
+        let unit = DistanceUnit.centimeter
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleMillimeterTextFieldChange(_ textField: UITextField) {
-        if let input = millimeterTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = DistanceUnit.millimeter
-                let millimeterValue = Distance(unit: unit, value: value)
-                
-                for _unit in DistanceUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = millimeterValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = millimeterTextField
+        let unit = DistanceUnit.millimeter
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleMileTextFieldChange(_ textField: UITextField) {
-        if let input = mileTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = DistanceUnit.mile
-                let mileValue = Distance(unit: unit, value: value)
-                
-                for _unit in DistanceUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = mileValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = mileTextField
+        let unit = DistanceUnit.mile
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleYardTextFieldChange(_ textField: UITextField) {
-        if let input = yardTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = DistanceUnit.yard
-                let yardValue = Distance(unit: unit, value: value)
-                
-                for _unit in DistanceUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = yardValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = yardTextField
+        let unit = DistanceUnit.yard
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleInchTextFieldChange(_ textField: UITextField) {
-        if let input = inchTextField.text {
+        let textField = inchTextField
+        let unit = DistanceUnit.inch
+        updateTextFields(textField: textField!, unit: unit)
+    }
+    
+    func updateTextFields(textField: UITextField, unit: DistanceUnit) -> Void {
+        if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
                 let value = Double(input)!
-                let unit = DistanceUnit.yard
-                let inchValue = Distance(unit: unit, value: value)
+                let distance = Distance(unit: unit, value: value)
                 
                 for _unit in DistanceUnit.getAllUnits {
                     if _unit == unit {
                         continue
                     }
-                    let textField = mapDistanceUnitToTextField(unit: _unit)
-                    let result = inchValue.convert(unit: _unit)
+                    let textField = mapUnitToTextField(unit: _unit)
+                    let result = distance.convert(unit: _unit)
                     textField.text = String(result)
                 }
             }
         }
     }
     
-    func mapDistanceUnitToTextField(unit: DistanceUnit) -> UITextField {
+    func mapUnitToTextField(unit: DistanceUnit) -> UITextField {
         var textField = meterTextField
         switch unit {
         case .meter:

@@ -40,111 +40,56 @@ class VolumeConversionViewController: UIViewController {
      }
     
     @IBAction func handleLitreTextFieldChange(_ textField: UITextField) {
-        if let input = litreTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = VolumeUnit.litre
-                let litreValue = Volume(unit: unit, value: value)
-                
-                for _unit in VolumeUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapVolumeUnitToTextField(unit: _unit)
-                    let result = litreValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = litreTextField
+        let unit = VolumeUnit.litre
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleMillilitreTextFieldChange(_ textField: UITextField) {
-        if let input = millilitreTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = VolumeUnit.millilitre
-                let millilitreValue = Volume(unit: unit, value: value)
-                
-                for _unit in VolumeUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapVolumeUnitToTextField(unit: _unit)
-                    let result = millilitreValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = millilitreTextField
+        let unit = VolumeUnit.millilitre
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleGallonTextFieldChange(_ textField: UITextField) {
-        if let input = gallonTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = VolumeUnit.gallon
-                let gallonValue = Volume(unit: unit, value: value)
-                
-                for _unit in VolumeUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapVolumeUnitToTextField(unit: _unit)
-                    let result = gallonValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = gallonTextField
+        let unit = VolumeUnit.gallon
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handlePintTextFieldChange(_ textField: UITextField) {
-        if let input = pintTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = VolumeUnit.pint
-                let pintValue = Volume(unit: unit, value: value)
-                
-                for _unit in VolumeUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapVolumeUnitToTextField(unit: _unit)
-                    let result = pintValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = pintTextField
+        let unit = VolumeUnit.pint
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleFluidOunceTextFieldChange(_ textField: UITextField) {
-        if let input = fluidOunceTextField.text {
+        let textField = fluidOunceTextField
+        let unit = VolumeUnit.fluidOunce
+        updateTextFields(textField: textField!, unit: unit)
+    }
+    
+    func updateTextFields(textField: UITextField, unit: VolumeUnit) -> Void {
+        if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
                 let value = Double(input)!
-                let unit = VolumeUnit.fluidOunce
-                let flOunceValue = Volume(unit: unit, value: value)
+                let volume = Volume(unit: unit, value: value)
                 
                 for _unit in VolumeUnit.getAllUnits {
                     if _unit == unit {
                         continue
                     }
-                    let textField = mapVolumeUnitToTextField(unit: _unit)
-                    let result = flOunceValue.convert(unit: _unit)
+                    let textField = mapUnitToTextField(unit: _unit)
+                    let result = volume.convert(unit: _unit)
                     textField.text = String(result)
                 }
             }
         }
     }
     
-    func mapVolumeUnitToTextField(unit: VolumeUnit) -> UITextField {
+    func mapUnitToTextField(unit: VolumeUnit) -> UITextField {
         var textField = litreTextField
         switch unit {
         case .litre:

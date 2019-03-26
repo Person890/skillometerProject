@@ -45,111 +45,56 @@ class WeightConversionViewController: UIViewController {
     }
     
     @IBAction func handleKilogramTextFieldChange(_ textField: UITextField) {
-        if let input = kilogramTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = WeightUnit.kilogram
-                let kilogramValue = Weight(unit: unit, value: value)
-                
-                for _unit in WeightUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapWeightUnitToTextField(unit: _unit)
-                    let result = kilogramValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = kilogramTextField
+        let unit = WeightUnit.kilogram
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleGramTextFieldChange(_ textField: UITextField) {
-        if let input = gramTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = WeightUnit.gram
-                let gramValue = Weight(unit: unit, value: value)
-                
-                for _unit in WeightUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapWeightUnitToTextField(unit: _unit)
-                    let result = gramValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = gramTextField
+        let unit = WeightUnit.gram
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleOunceTextFieldChange(_ textField: UITextField) {
-        if let input = ounceTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = WeightUnit.ounce
-                let ounceValue = Weight(unit: unit, value: value)
-                
-                for _unit in WeightUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapWeightUnitToTextField(unit: _unit)
-                    let result = ounceValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = ounceTextField
+        let unit = WeightUnit.ounce
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleStoneTextFieldChange(_ sender: UITextField) {
-        if let input = stoneTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else {
-                let value = Double(input)!
-                let unit = WeightUnit.stone
-                let stoneValue = Weight(unit: unit, value: value)
-                
-                for _unit in WeightUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapWeightUnitToTextField(unit: _unit)
-                    let result = stoneValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = stoneTextField
+        let unit = WeightUnit.stone
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handlePoundTextFieldChange(_ sender: UITextField) {
-        if let input = poundTextField.text {
+        let textField = poundTextField
+        let unit = WeightUnit.pound
+        updateTextFields(textField: textField!, unit: unit)
+    }
+    
+    func updateTextFields(textField: UITextField, unit: WeightUnit) -> Void {
+        if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
             } else {
                 let value = Double(input)!
-                let unit = WeightUnit.pound
-                let poundValue = Weight(unit: unit, value: value)
+                let weight = Weight(unit: unit, value: value)
                 
                 for _unit in WeightUnit.getAllUnits {
                     if _unit == unit {
                         continue
                     }
-                    let textField = mapWeightUnitToTextField(unit: _unit)
-                    let result = poundValue.convert(unit: _unit)
+                    let textField = mapUnitToTextField(unit: _unit)
+                    let result = weight.convert(unit: _unit)
                     textField.text = String(result)
                 }
             }
         }
     }
     
-    func mapWeightUnitToTextField(unit: WeightUnit) -> UITextField {
+    func mapUnitToTextField(unit: WeightUnit) -> UITextField {
         var textField = kilogramTextField
         switch unit {
         case .kilogram:

@@ -33,69 +33,44 @@ class TemperatureConversionViewController: UIViewController {
     }
     
     @IBAction func handleCelsiusTextFieldChange(_ sender: UITextField) {
-        if let input = celsiusTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else if Double(input) != nil {
-                let value = Double(input)!
-                let unit = TemperatureUnit.celsius
-                let celsiusValue = Temperature(unit: unit, value: value)
-                
-                for _unit in TemperatureUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapTemperatureUnitToTextField(unit: _unit)
-                    let result = celsiusValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = celsiusTextField
+        let unit = TemperatureUnit.celsius
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleFahrenheitTextFieldChange(_ sender: UITextField) {
-        if let input = fahrenheitTextField.text {
-            if input.isEmpty {
-                clearTextFields()
-            } else if Double(input) != nil {
-                let value = Double(input)!
-                let unit = TemperatureUnit.fahrenheit
-                let fahrenheitValue = Temperature(unit: unit, value: value)
-                
-                for _unit in TemperatureUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
-                    }
-                    let textField = mapTemperatureUnitToTextField(unit: _unit)
-                    let result = fahrenheitValue.convert(unit: _unit)
-                    textField.text = String(result)
-                }
-            }
-        }
+        let textField = fahrenheitTextField
+        let unit = TemperatureUnit.fahrenheit
+        updateTextFields(textField: textField!, unit: unit)
     }
     
     @IBAction func handleKelvinTextFieldChange(_ sender: UITextField) {
-        if let input = kelvinTextField.text {
+        let textField = kelvinTextField
+        let unit = TemperatureUnit.kelvin
+        updateTextFields(textField: textField!, unit: unit)
+    }
+    
+    func updateTextFields(textField: UITextField, unit: TemperatureUnit) -> Void {
+        if let input = textField.text {
             if input.isEmpty {
                 clearTextFields()
-            } else if Double(input) != nil {
+            } else {
                 let value = Double(input)!
-                let unit = TemperatureUnit.kelvin
-                let kelvinValue = Temperature(unit: unit, value: value)
+                let temperature = Temperature(unit: unit, value: value)
                 
                 for _unit in TemperatureUnit.getAllUnits {
                     if _unit == unit {
                         continue
                     }
-                    let textField = mapTemperatureUnitToTextField(unit: _unit)
-                    let result = kelvinValue.convert(unit: _unit)
+                    let textField = mapUnitToTextField(unit: _unit)
+                    let result = temperature.convert(unit: _unit)
                     textField.text = String(result)
                 }
             }
         }
     }
     
-    func mapTemperatureUnitToTextField(unit: TemperatureUnit) -> UITextField {
+    func mapUnitToTextField(unit: TemperatureUnit) -> UITextField {
         var textField = celsiusTextField
         switch unit {
         case .celsius:
