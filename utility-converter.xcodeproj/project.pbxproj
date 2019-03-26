@@ -23,6 +23,9 @@
 		BF61662C224A5E310060886C /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61662B224A5E310060886C /* SaveViewController.swift */; };
 		BF61662E224A5EB60060886C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61662D224A5EB60060886C /* HistoryViewController.swift */; };
 		BF616632224A5F130060886C /* ConstantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF616631224A5F130060886C /* ConstantsViewController.swift */; };
+		BF616634224A7E010060886C /* CustomNumericKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF616633224A7E010060886C /* CustomNumericKeyboard.xib */; };
+		BF616636224A8A0A0060886C /* CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF616635224A8A0A0060886C /* CustomNumericKeyboard.swift */; };
+		BF616638224A92D50060886C /* UITextField+CustomNumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF616637224A92D50060886C /* UITextField+CustomNumericKeyboard.swift */; };
 		BFADCD7B224050B3003644E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7A224050B3003644E0 /* AppDelegate.swift */; };
 		BFADCD7D224050B3003644E0 /* ConvertionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADCD7C224050B3003644E0 /* ConvertionsViewController.swift */; };
 		BFADCD82224050B3003644E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFADCD80224050B3003644E0 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		BF61662B224A5E310060886C /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
 		BF61662D224A5EB60060886C /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BF616631224A5F130060886C /* ConstantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsViewController.swift; sourceTree = "<group>"; };
+		BF616633224A7E010060886C /* CustomNumericKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNumericKeyboard.xib; sourceTree = "<group>"; };
+		BF616635224A8A0A0060886C /* CustomNumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumericKeyboard.swift; sourceTree = "<group>"; };
+		BF616637224A92D50060886C /* UITextField+CustomNumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+CustomNumericKeyboard.swift"; sourceTree = "<group>"; };
 		BFADCD77224050B3003644E0 /* utility-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "utility-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFADCD7A224050B3003644E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFADCD7C224050B3003644E0 /* ConvertionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertionsViewController.swift; sourceTree = "<group>"; };
@@ -72,9 +78,11 @@
 		BF5BB5B42248283D0034705A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF616635224A8A0A0060886C /* CustomNumericKeyboard.swift */,
 				BF5BB5BC224846860034705A /* ConversionViewCell.swift */,
 				BFADCD80224050B3003644E0 /* Main.storyboard */,
 				BFADCD85224050B5003644E0 /* LaunchScreen.storyboard */,
+				BF616633224A7E010060886C /* CustomNumericKeyboard.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BF61661B224987750060886C /* UITextField+PlaceholderColor.swift */,
+				BF616637224A92D50060886C /* UITextField+CustomNumericKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFADCD87224050B5003644E0 /* LaunchScreen.storyboard in Resources */,
+				BF616634224A7E010060886C /* CustomNumericKeyboard.xib in Resources */,
 				BFADCD84224050B5003644E0 /* Assets.xcassets in Resources */,
 				BFADCD82224050B3003644E0 /* Main.storyboard in Resources */,
 			);
@@ -256,9 +266,11 @@
 				BFADCD7D224050B3003644E0 /* ConvertionsViewController.swift in Sources */,
 				BF5BB5C1224860FE0034705A /* WeightConversionViewController.swift in Sources */,
 				BF6166202249961F0060886C /* Temperature.swift in Sources */,
+				BF616638224A92D50060886C /* UITextField+CustomNumericKeyboard.swift in Sources */,
 				BF616632224A5F130060886C /* ConstantsViewController.swift in Sources */,
 				BF616626224A4D210060886C /* Speed.swift in Sources */,
 				BF61662E224A5EB60060886C /* HistoryViewController.swift in Sources */,
+				BF616636224A8A0A0060886C /* CustomNumericKeyboard.swift in Sources */,
 				BF5BB5BD224846860034705A /* ConversionViewCell.swift in Sources */,
 				BF5BB5C92248614C0034705A /* DistanceConversionViewController.swift in Sources */,
 			);

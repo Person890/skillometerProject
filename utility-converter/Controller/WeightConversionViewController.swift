@@ -8,8 +8,8 @@
 
 import UIKit
 
-class WeightConversionViewController: UIViewController {
-    
+class WeightConversionViewController: UIViewController, CustomNumericKeyboardDelegate {
+
     @IBOutlet weak var kilogramTextField: UITextField!
     @IBOutlet weak var gramTextField: UITextField!
     @IBOutlet weak var ounceTextField: UITextField!
@@ -24,9 +24,10 @@ class WeightConversionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Set Text Field Styles
+        // Set Text Field Styles and Properties
         kilogramTextField.borderStyle = UITextField.BorderStyle.roundedRect
         kilogramTextField._lightPlaceholderColor(UIColor.lightText)
+        kilogramTextField.setAsNumericKeyboard(delegate: self)
         
         gramTextField.borderStyle = UITextField.BorderStyle.roundedRect
         gramTextField._lightPlaceholderColor(UIColor.lightText)
@@ -122,5 +123,21 @@ class WeightConversionViewController: UIViewController {
         poundTextField.text = ""
         stoneTextField.text = ""
         stonePoundTextField.text = ""
+    }
+    
+    func retractKeyPressed() {
+        print("Keyboard retract key pressed!")
+    }
+    
+    func numericKeyPressed(key: Int) {
+        print("Numeric key \(key) pressed!")
+    }
+    
+    func numericBackspacePressed() {
+        print("Backspace pressed!")
+    }
+    
+    func numericSymbolPressed(symbol: String) {
+        print("Symbol \(symbol) pressed!")
     }
 }
