@@ -7,6 +7,9 @@
 //
 import UIKit
 
+let VOLUME_USER_DEFAULTS_KEY = "volume"
+private let VOLUME_USER_DEFAULTS_MAX_COUNT = 5
+
 class VolumeConversionViewController: UIViewController {
     
     @IBOutlet weak var litreTextField: UITextField!
@@ -70,7 +73,19 @@ class VolumeConversionViewController: UIViewController {
     }
     
     @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        print("Save Volume")
+        let conversion = "\(litreTextField.text!) L = \(millilitreTextField.text!) ml = \(gallonTextField.text!) gal = \(pintTextField.text!) pints = \(fluidOunceTextField.text!) fl oz"
+        
+        var arr = UserDefaults.standard.array(forKey: VOLUME_USER_DEFAULTS_KEY) as? [String] ?? []
+        
+        if arr.count >= VOLUME_USER_DEFAULTS_MAX_COUNT {
+            arr = Array(arr.suffix(VOLUME_USER_DEFAULTS_MAX_COUNT - 1))
+        }
+        arr.append(conversion)
+        UserDefaults.standard.set(arr, forKey: VOLUME_USER_DEFAULTS_KEY)
+        
+        let alert = UIAlertController(title: "Success", message: "The volume conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateTextFields(textField: UITextField, unit: VolumeUnit) -> Void {

@@ -8,6 +8,9 @@
 
 import UIKit
 
+let SPEED_USER_DEFAULTS_KEY = "speed"
+private let SPEED_USER_DEFAULTS_MAX_COUNT = 5
+
 class SpeedConversionViewController: UIViewController {
     
     @IBOutlet weak var msTextField: UITextField!
@@ -61,7 +64,19 @@ class SpeedConversionViewController: UIViewController {
     }
     
     @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        print("Save Speed")
+        let conversion = "\(msTextField.text!) ms/s = \(kmhTextField.text!) km/h = \(mihTextField.text!) mi/h = \(knTextField.text!) knots"
+        
+        var arr = UserDefaults.standard.array(forKey: SPEED_USER_DEFAULTS_KEY) as? [String] ?? []
+        
+        if arr.count >= SPEED_USER_DEFAULTS_MAX_COUNT {
+            arr = Array(arr.suffix(SPEED_USER_DEFAULTS_MAX_COUNT - 1))
+        }
+        arr.append(conversion)
+        UserDefaults.standard.set(arr, forKey: SPEED_USER_DEFAULTS_KEY)
+        
+        let alert = UIAlertController(title: "Success", message: "The speed conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateTextFields(textField: UITextField, unit: SpeedUnit) -> Void {

@@ -8,6 +8,9 @@
 
 import UIKit
 
+let TEMP_USER_DEFAULTS_KEY = "temp"
+private let TEMP_USER_DEFAULTS_MAX_COUNT = 5
+
 class TemperatureConversionViewController: UIViewController {
     
     @IBOutlet weak var celsiusTextField: UITextField!
@@ -51,7 +54,19 @@ class TemperatureConversionViewController: UIViewController {
     }
     
     @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        print("Save Temperature")
+        let conversion = "\(celsiusTextField.text!) °C = \(fahrenheitTextField.text!) °F = \(kelvinTextField.text!) K"
+        
+        var arr = UserDefaults.standard.array(forKey: TEMP_USER_DEFAULTS_KEY) as? [String] ?? []
+        
+        if arr.count >= TEMP_USER_DEFAULTS_MAX_COUNT {
+            arr = Array(arr.suffix(TEMP_USER_DEFAULTS_MAX_COUNT - 1))
+        }
+        arr.append(conversion)
+        UserDefaults.standard.set(arr, forKey: TEMP_USER_DEFAULTS_KEY)
+        
+        let alert = UIAlertController(title: "Success", message: "The temperature conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateTextFields(textField: UITextField, unit: TemperatureUnit) -> Void {

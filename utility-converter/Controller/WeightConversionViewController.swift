@@ -8,6 +8,9 @@
 
 import UIKit
 
+let WEIGHTS_USER_DEFAULTS_KEY = "weight"
+private let WEIGHTS_USER_DEFAULTS_MAX_COUNT = 5
+
 class WeightConversionViewController: UIViewController, CustomNumericKeyboardDelegate {
 
     @IBOutlet weak var weightViewScroller: UIScrollView!
@@ -63,7 +66,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         }
         
         UIView.animate(withDuration: 0.25, animations: {() -> Void in
-            self.weightViewScroller.frame = CGRect(x: 0, y: 0, width: (self.weightViewScroller?.frame.width)!, height: ((self.weightViewScroller?.frame.height)! - self.keyBoardHeight + 49))
+            // self.weightViewScroller.frame = CGRect(x: 0, y: 0, width: (self.weightViewScroller?.frame.width)!, height: ((self.weightViewScroller?.frame.height)! - self.keyBoardHeight + 49))
         })
     }
     
@@ -98,7 +101,19 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
     }
     
     @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        print("Save Weight")
+        let conversion = "\(kilogramTextField.text!) kg = \(gramTextField.text!) g = \(ounceTextField.text!) oz =  \(poundTextField.text!) lb = \(stoneTextField.text!) stones & \(stonePoundTextField.text!) pounds"
+        
+        var weightsArr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
+        
+        if weightsArr.count >= WEIGHTS_USER_DEFAULTS_MAX_COUNT {
+            weightsArr = Array(weightsArr.suffix(WEIGHTS_USER_DEFAULTS_MAX_COUNT - 1))
+        }
+        weightsArr.append(conversion)
+        UserDefaults.standard.set(weightsArr, forKey: WEIGHTS_USER_DEFAULTS_KEY)
+
+        let alert = UIAlertController(title: "Success", message: "The weight conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateTextFields(textField: UITextField, unit: WeightUnit) -> Void {
