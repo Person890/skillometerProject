@@ -46,7 +46,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Set Text Field Styles and Properties
+        // set Text Field Styles and Properties
         kilogramTextField._lightPlaceholderColor(UIColor.lightText)
         kilogramTextField.setAsNumericKeyboard(delegate: self)
         
@@ -65,7 +65,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         spPoundTextField._lightPlaceholderColor(UIColor.lightText)
         spPoundTextField.setAsNumericKeyboard(delegate: self)
         
-        // Ad an observer to track keyboard show event
+        // ad an observer to track keyboard show event
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
     }
@@ -99,7 +99,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         
         if firstResponder != nil {
             activeTextField = firstResponder as! UITextField;
-        
+            
             var activeTextFieldSuperView = activeTextField.superview!
             
             if activeTextField.tag == 5 || activeTextField.tag == 6 {
@@ -150,7 +150,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
                 return recursiveSubView
             }
         }
-
+        
         return nil
     }
     
@@ -198,13 +198,13 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         if !isTextFieldsEmpty() {
             let conversion = "\(kilogramTextField.text!) kg = \(gramTextField.text!) g = \(ounceTextField.text!) oz =  \(poundTextField.text!) lb = \(spStoneTextField.text!) stones & \(spPoundTextField.text!) pounds"
             
-            var weightsArr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
+            var arr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
             
-            if weightsArr.count >= WEIGHTS_USER_DEFAULTS_MAX_COUNT {
-                weightsArr = Array(weightsArr.suffix(WEIGHTS_USER_DEFAULTS_MAX_COUNT - 1))
+            if arr.count >= WEIGHTS_USER_DEFAULTS_MAX_COUNT {
+                arr = Array(arr.suffix(WEIGHTS_USER_DEFAULTS_MAX_COUNT - 1))
             }
-            weightsArr.append(conversion)
-            UserDefaults.standard.set(weightsArr, forKey: WEIGHTS_USER_DEFAULTS_KEY)
+            arr.append(conversion)
+            UserDefaults.standard.set(arr, forKey: WEIGHTS_USER_DEFAULTS_KEY)
             
             let alert = UIAlertController(title: "Success", message: "The weight conversion was successully saved!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -247,20 +247,21 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
             if input.isEmpty {
                 clearTextFields()
             } else {
-                let value = Double(input)!
-                let weight = Weight(unit: unit, value: value)
-                
-                for _unit in WeightUnit.getAllUnits {
-                    if _unit == unit {
-                        continue
+                if let value = Double(input as String) {
+                    let weight = Weight(unit: unit, value: value)
+                    
+                    for _unit in WeightUnit.getAllUnits {
+                        if _unit == unit {
+                            continue
+                        }
+                        let textField = mapUnitToTextField(unit: _unit)
+                        let result = weight.convert(unit: _unit)
+                        
+                        //rounding off to 4 decimal places
+                        let roundedResult = Double(round(10000 * result) / 10000)
+                        
+                        textField.text = String(roundedResult)
                     }
-                    let textField = mapUnitToTextField(unit: _unit)
-                    let result = weight.convert(unit: _unit)
-                    
-                    //rounding off to 4 decimal places
-                    let roundedResult = Double(round(10000 * result) / 10000)
-                    
-                    textField.text = String(roundedResult)
                 }
             }
         }

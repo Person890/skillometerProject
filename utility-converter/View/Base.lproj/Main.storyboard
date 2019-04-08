@@ -119,69 +119,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="256-sN-ib7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-HF-zPw" userLabel="Temperature View Scroller">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzp-GO-nj4">
-                                        <rect key="frame" x="16" y="29" width="50" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="C" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FDj-am-e0E">
-                                        <rect key="frame" x="15" y="60" width="345" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="handleCelsiusTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="lmY-ed-QZE"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jW-eh-Uka">
-                                        <rect key="frame" x="16" y="117" width="73" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="F" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ld4-KA-n3P">
-                                        <rect key="frame" x="15" y="148" width="345" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="handleFahrenheitTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="ykq-3Y-acI"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kelvin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clG-Fu-SvE">
-                                        <rect key="frame" x="17" y="204" width="41" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="K" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zEs-Me-D7P">
-                                        <rect key="frame" x="16" y="235" width="345" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="handleKelvinTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="nRK-gW-zcg"/>
-                                        </connections>
-                                    </textField>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="256-sN-ib7" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="bottomRight" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Pu-Jo-9hl" userLabel="Outer Stack View">
+                                                <rect key="frame" x="15" y="17" width="345" height="219"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8XY-ZD-uNF" userLabel="Celcius Text Field Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="63"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzp-GO-nj4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="°C" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FDj-am-e0E">
+                                                                <rect key="frame" x="0.0" y="33" width="345" height="30"/>
+                                                                <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <connections>
+                                                                    <action selector="handleTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="wNL-Qx-Dru"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Kq-2e-ndg" userLabel="Fahrenheit Text Field Stack View">
+                                                        <rect key="frame" x="0.0" y="78" width="345" height="63"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jW-eh-Uka">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="°F" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ld4-KA-n3P">
+                                                                <rect key="frame" x="0.0" y="33" width="345" height="30"/>
+                                                                <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <connections>
+                                                                    <action selector="handleTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="9zj-bG-NsL"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-lF-m5m" userLabel="Kelvin Text Field Stack View">
+                                                        <rect key="frame" x="0.0" y="156" width="345" height="63"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kelvin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clG-Fu-SvE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="K" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zEs-Me-D7P">
+                                                                <rect key="frame" x="0.0" y="33" width="345" height="30"/>
+                                                                <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <connections>
+                                                                    <action selector="handleTextFieldChange:" destination="Ut6-oT-akK" eventType="editingChanged" id="n7K-oL-NZJ"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="6Pu-Jo-9hl" secondAttribute="bottom" constant="279" id="0jw-mb-8aY"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Pu-Jo-9hl" secondAttribute="trailing" constant="15" id="c8J-9H-pGs"/>
+                                            <constraint firstItem="6Pu-Jo-9hl" firstAttribute="top" secondItem="256-sN-ib7" secondAttribute="top" constant="17" id="e0t-Vn-rZB"/>
+                                            <constraint firstItem="6Pu-Jo-9hl" firstAttribute="leading" secondItem="256-sN-ib7" secondAttribute="leading" constant="15" id="i5H-Ko-H01"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="256-sN-ib7" firstAttribute="width" secondItem="aNr-HF-zPw" secondAttribute="width" id="0hz-6O-ffV"/>
+                                    <constraint firstItem="256-sN-ib7" firstAttribute="height" secondItem="aNr-HF-zPw" secondAttribute="height" priority="250" id="EQh-zZ-q2o"/>
+                                    <constraint firstItem="256-sN-ib7" firstAttribute="top" secondItem="aNr-HF-zPw" secondAttribute="top" id="FJQ-WK-Y3a"/>
+                                    <constraint firstAttribute="trailing" secondItem="256-sN-ib7" secondAttribute="trailing" id="GRw-Sk-NjD"/>
+                                    <constraint firstAttribute="bottom" secondItem="256-sN-ib7" secondAttribute="bottom" id="Iax-bh-d3O"/>
+                                    <constraint firstItem="256-sN-ib7" firstAttribute="leading" secondItem="aNr-HF-zPw" secondAttribute="leading" id="eE0-9C-HZL"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aNr-HF-zPw" firstAttribute="width" secondItem="IR5-xj-U0U" secondAttribute="width" id="4cX-6H-IOU"/>
+                            <constraint firstItem="7IT-vo-XCx" firstAttribute="bottom" secondItem="aNr-HF-zPw" secondAttribute="bottom" id="A0e-Ec-5nR"/>
+                            <constraint firstItem="aNr-HF-zPw" firstAttribute="leading" secondItem="7IT-vo-XCx" secondAttribute="leading" id="FO2-y3-vne"/>
+                            <constraint firstItem="7IT-vo-XCx" firstAttribute="trailing" secondItem="aNr-HF-zPw" secondAttribute="trailing" id="Hpq-cH-iQq"/>
+                            <constraint firstItem="aNr-HF-zPw" firstAttribute="top" secondItem="7IT-vo-XCx" secondAttribute="top" id="eoD-55-y8J"/>
+                            <constraint firstItem="aNr-HF-zPw" firstAttribute="height" secondItem="IR5-xj-U0U" secondAttribute="height" id="iVg-Rs-Jf8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7IT-vo-XCx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Temperature" id="hkb-5i-wqM">
@@ -193,13 +234,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="celsiusTextField" destination="FDj-am-e0E" id="4XA-Ta-Ec9"/>
+                        <outlet property="celsiusTextFieldStackView" destination="8XY-ZD-uNF" id="sQs-ib-H7U"/>
                         <outlet property="fahrenheitTextField" destination="ld4-KA-n3P" id="0nQ-s7-U8Z"/>
+                        <outlet property="fahrenheitTextFieldStackView" destination="0Kq-2e-ndg" id="wdK-Oe-CMw"/>
                         <outlet property="kelvinTextField" destination="zEs-Me-D7P" id="uRN-iO-nMC"/>
+                        <outlet property="kelvinTextFieldStackView" destination="ykF-lF-m5m" id="gJp-fT-SB5"/>
+                        <outlet property="outerStackView" destination="6Pu-Jo-9hl" id="6Va-nm-NaE"/>
+                        <outlet property="outerStackViewTopConstraint" destination="e0t-Vn-rZB" id="QRy-9D-QXL"/>
+                        <outlet property="temperatureViewScroller" destination="aNr-HF-zPw" id="fll-UG-Qya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7c-pb-7Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3202" y="-1940"/>
+            <point key="canvasLocation" x="3200.8000000000002" y="-1940.7796101949027"/>
         </scene>
         <!--Volume-->
         <scene sceneID="4fO-Z7-Dh5">
@@ -749,19 +796,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-HF-m3r" userLabel="Outer Stack View">
-                                                <rect key="frame" x="8" y="17" width="356" height="365"/>
+                                                <rect key="frame" x="15" y="17" width="345" height="365"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="CZK-Tf-fUX" userLabel="Kilograms Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="61"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilograms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-ob-kLz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-XB-4xd">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
+                                                                <rect key="frame" x="0.0" y="31" width="345" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -773,16 +820,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-z6-YaX" userLabel="Grams Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="76" width="356" height="61"/>
+                                                        <rect key="frame" x="0.0" y="76" width="345" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tt-Ts-mJf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="g" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x48-2K-XPe">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
+                                                                <rect key="frame" x="0.0" y="31" width="345" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -794,16 +841,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="VM8-OB-7zb" userLabel="Ounces Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="152" width="356" height="61"/>
+                                                        <rect key="frame" x="0.0" y="152" width="345" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ounces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-hk-0Sh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="oz" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7k7-g5-XcO">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
+                                                                <rect key="frame" x="0.0" y="31" width="345" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -815,16 +862,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yle-ap-ALK" userLabel="Pounds Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="228" width="356" height="61"/>
+                                                        <rect key="frame" x="0.0" y="228" width="345" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtJ-Ze-uEx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9qO-mw-ZbX">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
+                                                                <rect key="frame" x="0.0" y="31" width="345" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -836,19 +883,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-8E-dNi" userLabel="SP Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="304" width="356" height="61"/>
+                                                        <rect key="frame" x="0.0" y="304" width="345" height="61"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="pzI-lk-naN" userLabel="SP Stones Text Field Stack view">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170.5" height="61"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="61"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-06-Oix">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="18"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="st" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="CK6-qr-ExG" userLabel="spStone Text Field">
-                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="31" width="165" height="30"/>
                                                                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -860,16 +907,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="lGG-jt-NAg" userLabel="SP Pounds Text Field Stack view">
-                                                                <rect key="frame" x="185.5" y="0.0" width="170.5" height="61"/>
+                                                                <rect key="frame" x="180" y="0.0" width="165" height="61"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSz-aG-OjE">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="18"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-OR-0fH" userLabel="spPound Text Field">
-                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="31" width="165" height="30"/>
                                                                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -887,9 +934,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="qA5-HF-m3r" firstAttribute="leading" secondItem="SUm-qS-Rxu" secondAttribute="leading" constant="8" id="5JS-cq-db2"/>
+                                            <constraint firstItem="qA5-HF-m3r" firstAttribute="leading" secondItem="SUm-qS-Rxu" secondAttribute="leading" constant="15" id="5JS-cq-db2"/>
                                             <constraint firstAttribute="bottom" secondItem="qA5-HF-m3r" secondAttribute="bottom" id="HGs-up-fTw"/>
-                                            <constraint firstAttribute="trailing" secondItem="qA5-HF-m3r" secondAttribute="trailing" constant="11" id="iDT-Xs-gS4"/>
+                                            <constraint firstAttribute="trailing" secondItem="qA5-HF-m3r" secondAttribute="trailing" constant="15" id="iDT-Xs-gS4"/>
                                             <constraint firstItem="qA5-HF-m3r" firstAttribute="top" secondItem="SUm-qS-Rxu" secondAttribute="top" constant="17" id="lUM-J3-G0V"/>
                                         </constraints>
                                     </view>

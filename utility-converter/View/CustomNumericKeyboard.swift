@@ -59,6 +59,8 @@ class CustomNumericKeyboard: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeKeyboard()
+        NotificationCenter.default.addObserver(self, selector: #selector(enableMinusButton(notification:)),
+                                               name: NSNotification.Name(rawValue: "enableMinusButton"), object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,6 +76,9 @@ class CustomNumericKeyboard: UIView {
         view.frame = self.bounds
         
         updateButtonAppearance()
+        
+        // disable minus button
+        btnKeyMinus.isUserInteractionEnabled = false
     }
     
     // MARK: - Changes in appearance
@@ -87,6 +92,10 @@ class CustomNumericKeyboard: UIView {
                 button.backgroundColor = btnDefaultBgColour
             }
         }
+    }
+    
+    @objc func enableMinusButton(notification: NSNotification) {
+        btnKeyMinus.isUserInteractionEnabled = true
     }
     
     // MARK: - Button actions

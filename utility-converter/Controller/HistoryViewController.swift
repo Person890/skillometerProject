@@ -19,9 +19,14 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // generate the history of the initial segment
         generateHistory(type: conversionType, icon: icon)
+        DispatchQueue.main.async { self.tableView.reloadData() }
         
         // checks if the clear button should be visible
         toggleHistoryClearButtonVisibility()
