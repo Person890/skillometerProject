@@ -18,28 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utility Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLi-4z-PtH">
-                                <rect key="frame" x="102" y="290" width="170" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-id-MuI">
+                                <rect key="frame" x="67" y="169" width="241" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="LvK-I1-sbf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utility Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLi-4z-PtH">
+                                <rect key="frame" x="102.5" y="305" width="170" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by Aparecium Labs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs9-Ll-ekN">
-                                <rect key="frame" x="107" y="325" width="161" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Aparecium Labs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs9-Ll-ekN">
+                                <rect key="frame" x="107" y="340" width="161" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="ulL-gQ-cGp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jrJ-id-MuI" firstAttribute="centerX" secondItem="GLi-4z-PtH" secondAttribute="centerX" id="EeN-zf-6ww"/>
+                            <constraint firstItem="jrJ-id-MuI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="T9b-7q-82a"/>
+                            <constraint firstItem="jrJ-id-MuI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XK4-wh-Mah"/>
+                            <constraint firstItem="GLi-4z-PtH" firstAttribute="top" secondItem="jrJ-id-MuI" secondAttribute="bottom" constant="8" symbolic="YES" id="goE-5j-GcJ"/>
+                            <constraint firstItem="Vs9-Ll-ekN" firstAttribute="top" secondItem="GLi-4z-PtH" secondAttribute="bottom" constant="8" symbolic="YES" id="mTy-gN-5IR"/>
+                            <constraint firstItem="jrJ-id-MuI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ra8-xV-LWK"/>
+                            <constraint firstItem="jrJ-id-MuI" firstAttribute="centerX" secondItem="Vs9-Ll-ekN" secondAttribute="centerX" id="scB-db-L6y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="app-icon" width="288" height="288"/>
+    </resources>
 </document>
