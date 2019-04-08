@@ -743,10 +743,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-HF-m3r" userLabel="Outer Stack View">
-                                                <rect key="frame" x="8" y="17" width="356" height="325"/>
+                                                <rect key="frame" x="8" y="17" width="356" height="365"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="CZK-Tf-fUX" userLabel="Kilograms Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="53"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilograms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac1-ob-kLz">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
@@ -754,20 +754,20 @@
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="kg" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-XB-4xd">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="22"/>
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-XB-4xd">
+                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
-                                                                    <action selector="handleKilogramTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="cg4-NE-VQv"/>
+                                                                    <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="83p-nA-8Wn"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-z6-YaX" userLabel="Grams Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="68" width="356" height="53"/>
+                                                        <rect key="frame" x="0.0" y="76" width="356" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tt-Ts-mJf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
@@ -775,20 +775,20 @@
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="g" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x48-2K-XPe">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="22"/>
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="g" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x48-2K-XPe">
+                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
-                                                                    <action selector="handleGramTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="FXe-iU-9CH"/>
+                                                                    <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="myc-vO-Snl"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="VM8-OB-7zb" userLabel="Ounces Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="136" width="356" height="53"/>
+                                                        <rect key="frame" x="0.0" y="152" width="356" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ounces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-hk-0Sh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
@@ -796,20 +796,20 @@
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="oz" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7k7-g5-XcO">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="22"/>
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="oz" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7k7-g5-XcO">
+                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
-                                                                    <action selector="handleOunceTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="sLc-Fp-auB"/>
+                                                                    <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="Lnx-rN-VR7"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yle-ap-ALK" userLabel="Pounds Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="204" width="356" height="53"/>
+                                                        <rect key="frame" x="0.0" y="228" width="356" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtJ-Ze-uEx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="18"/>
@@ -817,23 +817,23 @@
                                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9qO-mw-ZbX">
-                                                                <rect key="frame" x="0.0" y="31" width="356" height="22"/>
+                                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9qO-mw-ZbX">
+                                                                <rect key="frame" x="0.0" y="31" width="356" height="30"/>
                                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
-                                                                    <action selector="handlePoundTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="h9x-EY-GE4"/>
+                                                                    <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="hng-H8-zJ9"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-8E-dNi" userLabel="SP Text Field Stack view">
-                                                        <rect key="frame" x="0.0" y="272" width="356" height="53"/>
+                                                        <rect key="frame" x="0.0" y="304" width="356" height="61"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="pzI-lk-naN" userLabel="SP Stones Text Field Stack view">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="170.5" height="61"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-06-Oix">
                                                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="18"/>
@@ -841,20 +841,20 @@
                                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="st" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="CK6-qr-ExG" userLabel="spStone Text Field">
-                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="22"/>
+                                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="st" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="CK6-qr-ExG" userLabel="spStone Text Field">
+                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="30"/>
                                                                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         <connections>
-                                                                            <action selector="handleStoneTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="GQn-qO-Khp"/>
+                                                                            <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="0sf-4i-7aU"/>
                                                                         </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="lGG-jt-NAg" userLabel="SP Pounds Text Field Stack view">
-                                                                <rect key="frame" x="185.5" y="0.0" width="170.5" height="53"/>
+                                                                <rect key="frame" x="185.5" y="0.0" width="170.5" height="61"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSz-aG-OjE">
                                                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="18"/>
@@ -862,12 +862,15 @@
                                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-OR-0fH" userLabel="spPound Text Field">
-                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="22"/>
+                                                                    <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lb" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-OR-0fH" userLabel="spPound Text Field">
+                                                                        <rect key="frame" x="0.0" y="31" width="170.5" height="30"/>
                                                                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                        <connections>
+                                                                            <action selector="handleTextFieldChange:" destination="4CW-L2-S2i" eventType="editingChanged" id="TDF-a1-EQp"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>

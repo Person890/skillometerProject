@@ -49,7 +49,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         histories = []
         let historyList = UserDefaults.standard.value(forKey: conversionType) as? [String]
         
-        if (historyList?.count)! > 0 {
+        if historyList?.count ?? 0 > 0 {
             for conersion in historyList! {
                 let history = History(type: type,icon: icon,conversion: conersion)
                 histories += [history]
