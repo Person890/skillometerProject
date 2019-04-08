@@ -662,7 +662,13 @@
                         <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="23a-z8-5ae"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="Iam-ug-etD"/>
+                    <navigationItem key="navigationItem" title="History" id="Iam-ug-etD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kDD-ez-6O1">
+                            <connections>
+                                <action selector="handleHistoryClearButtonClick:" destination="ltg-Ro-xpP" id="bCY-yC-6PO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="VMn-hs-25b" id="oN3-rw-z85"/>
                         <outlet property="tableView" destination="FbF-69-OQi" id="Zgy-bc-oOH"/>
