@@ -70,7 +70,8 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         cell.historyConversionText.text = histories[indexPath.row].getHistoryConversion()
         cell.historyTypeIcon.image = histories[indexPath.row].getHistoryIcon()
             
-        //Card(cell) styles
+        // Card(cell) styles
+        cell.isUserInteractionEnabled = false
         cell.contentView.backgroundColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00)
         cell.contentView.layer.cornerRadius = 10.0
         cell.contentView.layer.borderWidth = 1.0
