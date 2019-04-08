@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2AFCE0225BA53C0008E8BF /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AFCDF225BA53C0008E8BF /* UIViewController+HideKeyboard.swift */; };
 		BF5BB5B922483D2F0034705A /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5B822483D2F0034705A /* Conversion.swift */; };
 		BF5BB5BD224846860034705A /* ConversionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5BC224846860034705A /* ConversionViewCell.swift */; };
 		BF5BB5C1224860FE0034705A /* WeightConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C0224860FE0034705A /* WeightConversionViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2AFCDF225BA53C0008E8BF /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		BF5BB5B822483D2F0034705A /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		BF5BB5BC224846860034705A /* ConversionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewCell.swift; sourceTree = "<group>"; };
 		BF5BB5C0224860FE0034705A /* WeightConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConversionViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				BF61661B224987750060886C /* UITextField+PlaceholderColor.swift */,
 				BF616637224A92D50060886C /* UITextField+CustomNumericKeyboard.swift */,
+				BF2AFCDF225BA53C0008E8BF /* UIViewController+HideKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				BF61662C224A5E310060886C /* SaveViewController.swift in Sources */,
 				BFADCD7B224050B3003644E0 /* AppDelegate.swift in Sources */,
 				BF61663C224AFC750060886C /* HistoryTableViewCell.swift in Sources */,
+				BF2AFCE0225BA53C0008E8BF /* UIViewController+HideKeyboard.swift in Sources */,
 				BF5BB5C32248610F0034705A /* VolumeConversionViewController.swift in Sources */,
 				BF616622224A3B340060886C /* Volume.swift in Sources */,
 				BF616628224A51A30060886C /* SpeedConversionViewController.swift in Sources */,

@@ -14,17 +14,28 @@ private let WEIGHTS_USER_DEFAULTS_MAX_COUNT = 5
 class WeightConversionViewController: UIViewController, CustomNumericKeyboardDelegate {
 
     @IBOutlet weak var weightViewScroller: UIScrollView!
+    @IBOutlet weak var outerStackView: UIStackView!
+    @IBOutlet weak var outerStackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var kilogramTextField: UITextField!
+    @IBOutlet weak var kilogramTextFieldStackView: UIStackView!
     @IBOutlet weak var gramTextField: UITextField!
+    @IBOutlet weak var gramTextFieldStackView: UIStackView!
     @IBOutlet weak var ounceTextField: UITextField!
+    @IBOutlet weak var ounceTextFieldStackView: UIStackView!
     @IBOutlet weak var poundTextField: UITextField!
-    @IBOutlet weak var stoneTextField: UITextField!
-    @IBOutlet weak var stonePoundTextField: UITextField!
+    @IBOutlet weak var poundsTextFieldStackView: UIStackView!
+    @IBOutlet weak var spStoneTextField: UITextField!
+    @IBOutlet weak var spPoundTextField: UITextField!
+    @IBOutlet weak var spTextFieldStackView: UIStackView!
     
+    var activeTextField = UITextField()
+    var outerStackViewTopConstraintDefaultHeight: CGFloat = 17.0
+    var textFieldKeyBoardGap = 20
     var keyBoardHeight:CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,27 +58,72 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         poundTextField._lightPlaceholderColor(UIColor.lightText)
         poundTextField.setAsNumericKeyboard(delegate: self)
         
-        stoneTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        stoneTextField._lightPlaceholderColor(UIColor.lightText)
-        stoneTextField.setAsNumericKeyboard(delegate: self)
+        spStoneTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        spStoneTextField._lightPlaceholderColor(UIColor.lightText)
+        spStoneTextField.setAsNumericKeyboard(delegate: self)
         
-        stonePoundTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        stonePoundTextField._lightPlaceholderColor(UIColor.lightText)
-        stonePoundTextField.setAsNumericKeyboard(delegate: self)
+        spPoundTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        spPoundTextField._lightPlaceholderColor(UIColor.lightText)
+        spPoundTextField.setAsNumericKeyboard(delegate: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
+    @objc func keyboardWillHide() {
+        view.endEditing(true)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.outerStackViewTopConstraint.constant = self.outerStackViewTopConstraintDefaultHeight
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as?
-            NSValue)?.cgRectValue {
-            self.keyBoardHeight = keyboardSize.height
+        
+        activeTextField = self.findFirstResponder(inView: self.view) as! UITextField
+        var activeTextFieldSuperView = activeTextField.superview!
+        
+        if activeTextField.tag == 1 || activeTextField.tag == 2 {
+            activeTextFieldSuperView = activeTextField.superview!.superview!
         }
         
-        UIView.animate(withDuration: 0.25, animations: {() -> Void in
-            // self.weightViewScroller.frame = CGRect(x: 0, y: 0, width: (self.weightViewScroller?.frame.width)!, height: ((self.weightViewScroller?.frame.height)! - self.keyBoardHeight + 49))
-        })
+        if let info = notification.userInfo {
+            let keyboard:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            
+            let targetY = view.frame.size.height - keyboard.height - 15 - activeTextField.frame.size.height
+            
+            let initialY = outerStackView.frame.origin.y + activeTextFieldSuperView.frame.origin.y + activeTextField.frame.origin.y
+            
+            if initialY > targetY {
+                let diff = targetY - initialY
+                let targetOffsetForTopConstraint = outerStackViewTopConstraint.constant + diff
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.outerStackViewTopConstraint.constant = targetOffsetForTopConstraint
+                    self.view.layoutIfNeeded()
+                })
+            }
+            
+            var contentInset:UIEdgeInsets = self.weightViewScroller.contentInset
+            contentInset.bottom = keyboard.size.height
+            weightViewScroller.contentInset = contentInset
+        }
+    }
+    
+    func findFirstResponder(inView view: UIView) -> UIView? {
+        for subView in view.subviews as! [UIView] {
+            if subView.isFirstResponder {
+                return subView
+            }
+            
+            if let recursiveSubView = self.findFirstResponder(inView: subView) {
+                return recursiveSubView
+            }
+        }
+        
+        return nil
     }
     
     @IBAction func handleKilogramTextFieldChange(_ textField: UITextField) {
@@ -88,20 +144,20 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         updateTextFields(textField: textField!, unit: unit)
     }
     
-    @IBAction func handleStoneTextFieldChange(_ sender: UITextField) {
-        let textField = stoneTextField
-        let unit = WeightUnit.stone
-        updateTextFields(textField: textField!, unit: unit)
-    }
-    
     @IBAction func handlePoundTextFieldChange(_ sender: UITextField) {
         let textField = poundTextField
         let unit = WeightUnit.pound
         updateTextFields(textField: textField!, unit: unit)
     }
     
+    @IBAction func handleStoneTextFieldChange(_ sender: UITextField) {
+        let textField = spStoneTextField
+        let unit = WeightUnit.stone
+        updateTextFields(textField: textField!, unit: unit)
+    }
+    
     @IBAction func handleSaveButtonClick(_ sender: UIBarButtonItem) {
-        let conversion = "\(kilogramTextField.text!) kg = \(gramTextField.text!) g = \(ounceTextField.text!) oz =  \(poundTextField.text!) lb = \(stoneTextField.text!) stones & \(stonePoundTextField.text!) pounds"
+        let conversion = "\(kilogramTextField.text!) kg = \(gramTextField.text!) g = \(ounceTextField.text!) oz =  \(poundTextField.text!) lb = \(spStoneTextField.text!) stones & \(spPoundTextField.text!) pounds"
         
         var weightsArr = UserDefaults.standard.array(forKey: WEIGHTS_USER_DEFAULTS_KEY) as? [String] ?? []
         
@@ -148,7 +204,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         case .pound:
             textField = poundTextField
         case .stone:
-            textField = stoneTextField
+            textField = spStoneTextField
         }
         return textField!
     }
@@ -158,12 +214,12 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         gramTextField.text = ""
         ounceTextField.text = ""
         poundTextField.text = ""
-        stoneTextField.text = ""
-        stonePoundTextField.text = ""
+        spStoneTextField.text = ""
+        spPoundTextField.text = ""
     }
     
     func retractKeyPressed() {
-        print("Keyboard retract key pressed!")
+        keyboardWillHide()
     }
     
     func numericKeyPressed(key: Int) {
