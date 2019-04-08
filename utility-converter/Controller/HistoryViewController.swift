@@ -22,8 +22,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     }
     
     @IBAction func handleSegmentControlIndexChange(_ sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex
-        {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             conversionType = WEIGHTS_USER_DEFAULTS_KEY
             generateHistory(type: conversionType, icon: UIImage(named: "ic_weight")!)
@@ -62,6 +61,12 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if histories.count == 0 {
+            self.tableView.setEmptyMessage("No saved conversions found", UIColor.white)
+        } else {
+            self.tableView.restore()
+        }
+        
         return histories.count
     }
     
@@ -80,5 +85,5 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
             
         return cell
     }
+    
 }
-

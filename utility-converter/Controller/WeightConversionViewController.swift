@@ -189,6 +189,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
     }
     
     /// This function handles the saving of conversions on to the userdefaults.
+    /// Only 5 conversions will be saved under each type.
     /// It checks if the text fields are filled and saves the conversion in user
     /// defaults and if the text fields aren't empty an alert will be shown.
     ///
