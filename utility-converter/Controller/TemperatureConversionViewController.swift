@@ -251,7 +251,7 @@ class TemperatureConversionViewController: UIViewController, CustomNumericKeyboa
     ///
     /// - Parameter unit: The temperature unit.
     ///
-    /// - Returns: A UITextField corresponding to the weight unit.
+    /// - Returns: A UITextField corresponding to the temperature unit.
     func mapUnitToTextField(unit: TemperatureUnit) -> UITextField {
         var textField = celsiusTextField
         switch unit {
