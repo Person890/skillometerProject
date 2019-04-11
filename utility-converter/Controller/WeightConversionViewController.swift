@@ -64,7 +64,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         
         spPoundTextField._lightPlaceholderColor(UIColor.lightText)
         spPoundTextField.setAsNumericKeyboard(delegate: self)
-        spPoundTextField.isUserInteractionEnabled = false
+        spPoundTextField.isUserInteractionEnabled = false // disable the interactivity
         
         // ad an observer to track keyboard show event
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
@@ -269,6 +269,8 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         }
     }
     
+    // This functions seperates out the decimal portion of the stone pound conversion
+    // and ads it to the pound text field.
     func moderateStonePounds() {
         if let textFieldVal = spStoneTextField.text {
             if let value = Double(textFieldVal as String) {

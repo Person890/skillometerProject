@@ -8,10 +8,10 @@
 
 import UIKit
 
-// public consts
+// public constant which sets the recommended keyboard height
 let customNKbRecommendedHeight = 274.00
 
-// private consts
+// private constants to set button colours
 private let defaultKeyColour = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00)
 private let pressedKeyColour = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.00)
 
@@ -23,8 +23,7 @@ private let pressedKeyColour = UIColor(red: 50/255, green: 50/255, blue: 50/255,
 }
 
 class CustomNumericKeyboard: UIView {
-    
-    // MARK: - outlets
+
     @IBOutlet weak var btnKey0: UIButton!
     @IBOutlet weak var btnKey1: UIButton!
     @IBOutlet weak var btnKey2: UIButton!
@@ -40,7 +39,8 @@ class CustomNumericKeyboard: UIView {
     @IBOutlet weak var btnKeyBackspace: UIButton!
     @IBOutlet weak var btnKeyRetract: UIButton!
     
-    // all non-backspace button outlets
+    // All button outlets except the backspace button
+    // This is used in changing the button appearance.
     var allButtons: [UIButton] { return [btnKey0, btnKey1, btnKey2, btnKey3, btnKey4, btnKey5, btnKey6, btnKey7, btnKey8, btnKey9, btnKeyPeriod, btnKeyMinus] }
     
     
@@ -53,8 +53,6 @@ class CustomNumericKeyboard: UIView {
     var btnPressedBgColour = pressedKeyColour { didSet { updateButtonAppearance() } }
     var btnDefaultFontColor = UIColor.gray { didSet { updateButtonAppearance() } }
     var btnPressedFontColor = UIColor.white { didSet { updateButtonAppearance() } }
-    
-    // MARK: - Initialization and lifecycle.
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,7 +67,6 @@ class CustomNumericKeyboard: UIView {
     }
     
     func initializeKeyboard() {
-        // set view
         let xibFileName = "CustomNumericKeyboard"
         let view = Bundle.main.loadNibNamed(xibFileName, owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
@@ -77,11 +74,11 @@ class CustomNumericKeyboard: UIView {
         
         updateButtonAppearance()
         
-        // disable minus button
+        // disables minus button by default
         btnKeyMinus.isUserInteractionEnabled = false
     }
     
-    // MARK: - Changes in appearance
+    // This function changes button appearance in different states.
     fileprivate func updateButtonAppearance() {
         for button in allButtons {
             button.setTitleColor(btnDefaultFontColor, for: .normal)
@@ -94,25 +91,29 @@ class CustomNumericKeyboard: UIView {
         }
     }
     
+    // This function can be used to programatically enable the minus button.
     @objc func enableMinusButton(notification: NSNotification) {
         btnKeyMinus.isUserInteractionEnabled = true
     }
     
-    // MARK: - Button actions
+    // This function handles numeric button click
     @IBAction func handleNumericButtonPress(_ sender: UIButton) {
         self.delegate?.numericKeyPressed(key: sender.tag)
     }
     
+    // This function handles backspace button click
     @IBAction func handleBackspaceButtonPress(_ sender: AnyObject) {
         self.delegate?.numericBackspacePressed()
     }
     
+    // This function handles symbol button click
     @IBAction func handleSymbolButtonPress(_ sender: UIButton) {
         if let symbol = sender.titleLabel?.text, symbol.count > 0 {
             self.delegate?.numericSymbolPressed(symbol: symbol)
         }
     }
     
+    // This function handles retract keyboard button click
     @IBAction func handleRetractButtonPress(_ sender: Any) {
         self.delegate?.retractKeyPressed()
     }

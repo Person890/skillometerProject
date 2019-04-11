@@ -8,14 +8,16 @@
 
 import UIKit
 
+// MARK: - This extension can be used to hide keyboards.
 extension UIViewController {
-    /// Call this once to dismiss open keyboards by tapping anywhere in the view controller
+    
+    /// This function Hides the keyboard when tapped on the view.
     func setupHideKeyboardOnTap() {
         self.view.addGestureRecognizer(self.endEditingRecognizer())
         self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
     }
     
-    /// Dismisses the keyboard from self.view
+    /// This function dismisses the keyboard from view.
     private func endEditingRecognizer() -> UIGestureRecognizer {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
         tap.cancelsTouchesInView = false

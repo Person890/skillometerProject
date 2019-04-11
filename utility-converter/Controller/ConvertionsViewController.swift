@@ -18,6 +18,12 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         generateConversions()
     }
     
+    /// This function generates the differect conversion types supported
+    /// by the application.
+    ///
+    /// Usage:
+    ///
+    ///      generateConversions()
     func generateConversions() {
         let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
         let temperature = Conversion(name: "Tempertaure", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
@@ -28,10 +34,12 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         conversions += [weight, temperature, volume, distance, speed]
     }
     
+    /// This function returns the conversions count to be used in the collection view.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return conversions.count
     }
     
+    /// This function generates the collection view cell.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ConversionViewCell
         cell.conversionName.text = conversions[indexPath.row].getConversionName()
@@ -47,6 +55,8 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
         return cell
     }
     
+    // This function is called when an item in the collection view is selected.
+    // performSegue() method will help navigate to the specified conversion page.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: conversions[indexPath.row].getSegueID(), sender: self)
     }

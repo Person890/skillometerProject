@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// MARK: - This extension cab be used to set empty state in uitable views.
 extension UITableView {
     
+    /// This function sets an empty message on the table view.
     func setEmptyMessage(_ message: String,_ messageColour: UIColor) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = message
@@ -23,6 +25,7 @@ extension UITableView {
         self.backgroundView = messageLabel;
     }
     
+    /// This function removes the empty message from the table view.
     func restore() {
         self.backgroundView = nil
     }
