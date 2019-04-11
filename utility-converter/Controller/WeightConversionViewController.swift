@@ -276,9 +276,10 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
             if let value = Double(textFieldVal as String) {
                 let integerPart = Int(value)
                 let decimalPart = value.truncatingRemainder(dividingBy: 1)
+                let poundValue = decimalPart * 14
                 
                 spStoneTextField.text = String(integerPart)
-                spPoundTextField.text = String(decimalPart * 14)
+                spPoundTextField.text = String(Double(round(10000 * poundValue) / 10000))
             }
         }
     }
