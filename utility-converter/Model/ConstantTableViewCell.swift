@@ -1,0 +1,21 @@
+//
+//  ConstantTableViewCell.swift
+//  utility-converter
+//
+//  Created by Brion Silva on 09/04/2019.
+//  Copyright © 2019 Brion Silva. All rights reserved.
+//
+
+import UIKit
+
+class ConstantTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var constantIcon: UIImageView!
+    @IBOutlet weak var constantName: UILabel!
+    @IBOutlet weak var constantFormula: UILabel!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+    }
+}

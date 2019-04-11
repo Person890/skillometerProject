@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF2AFCE0225BA53C0008E8BF /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AFCDF225BA53C0008E8BF /* UIViewController+HideKeyboard.swift */; };
 		BF2AFCE2225BE4FE0008E8BF /* UITableView+EmptyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AFCE1225BE4FE0008E8BF /* UITableView+EmptyTable.swift */; };
+		BF2AFCE6225C1A9A0008E8BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AFCE5225C1A9A0008E8BF /* Constant.swift */; };
+		BF2AFCE8225C25A30008E8BF /* ConstantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2AFCE7225C25A30008E8BF /* ConstantTableViewCell.swift */; };
 		BF5BB5B922483D2F0034705A /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5B822483D2F0034705A /* Conversion.swift */; };
 		BF5BB5BD224846860034705A /* ConversionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5BC224846860034705A /* ConversionViewCell.swift */; };
 		BF5BB5C1224860FE0034705A /* WeightConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5BB5C0224860FE0034705A /* WeightConversionViewController.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		BF2AFCDF225BA53C0008E8BF /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		BF2AFCE1225BE4FE0008E8BF /* UITableView+EmptyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyTable.swift"; sourceTree = "<group>"; };
+		BF2AFCE5225C1A9A0008E8BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BF2AFCE7225C25A30008E8BF /* ConstantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTableViewCell.swift; sourceTree = "<group>"; };
 		BF5BB5B822483D2F0034705A /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		BF5BB5BC224846860034705A /* ConversionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewCell.swift; sourceTree = "<group>"; };
 		BF5BB5C0224860FE0034705A /* WeightConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConversionViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				BF616639224AF8C80060886C /* History.swift */,
 				BF5BB5BC224846860034705A /* ConversionViewCell.swift */,
 				BF61663B224AFC750060886C /* HistoryTableViewCell.swift */,
+				BF2AFCE5225C1A9A0008E8BF /* Constant.swift */,
+				BF2AFCE7225C25A30008E8BF /* ConstantTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				BFD98D092249219900C4DD2E /* Weight.swift in Sources */,
 				BF616624224A45560060886C /* Distance.swift in Sources */,
 				BF5BB5B922483D2F0034705A /* Conversion.swift in Sources */,
+				BF2AFCE8225C25A30008E8BF /* ConstantTableViewCell.swift in Sources */,
 				BF61661E224994ED0060886C /* TemperatureConversionViewController.swift in Sources */,
 				BF61662C224A5E310060886C /* SaveViewController.swift in Sources */,
 				BFADCD7B224050B3003644E0 /* AppDelegate.swift in Sources */,
@@ -283,6 +290,7 @@
 				BF6166202249961F0060886C /* Temperature.swift in Sources */,
 				BF61663A224AF8C80060886C /* History.swift in Sources */,
 				BF616638224A92D50060886C /* UITextField+CustomNumericKeyboard.swift in Sources */,
+				BF2AFCE6225C1A9A0008E8BF /* Constant.swift in Sources */,
 				BF616632224A5F130060886C /* ConstantsViewController.swift in Sources */,
 				BF616626224A4D210060886C /* Speed.swift in Sources */,
 				BF61662E224A5EB60060886C /* HistoryViewController.swift in Sources */,

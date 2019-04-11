@@ -64,6 +64,7 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
         
         spPoundTextField._lightPlaceholderColor(UIColor.lightText)
         spPoundTextField.setAsNumericKeyboard(delegate: self)
+        spPoundTextField.isUserInteractionEnabled = false
         
         // ad an observer to track keyboard show event
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
@@ -261,8 +262,21 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
                         let roundedResult = Double(round(10000 * result) / 10000)
                         
                         textField.text = String(roundedResult)
+                        moderateStonePounds()
                     }
                 }
+            }
+        }
+    }
+    
+    func moderateStonePounds() {
+        if let textFieldVal = spStoneTextField.text {
+            if let value = Double(textFieldVal as String) {
+                let integerPart = Int(value)
+                let decimalPart = value.truncatingRemainder(dividingBy: 1)
+                
+                spStoneTextField.text = String(integerPart)
+                spPoundTextField.text = String(decimalPart * 14)
             }
         }
     }
@@ -325,5 +339,13 @@ class WeightConversionViewController: UIViewController, CustomNumericKeyboardDel
     /// and will be triggered when the symobol buttons are pressed on the custom keyboard.
     func numericSymbolPressed(symbol: String) {
         print("Symbol \(symbol) pressed!")
+    }
+}
+
+extension Float
+{
+    var cleanValue: String
+    {
+        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
     }
 }
