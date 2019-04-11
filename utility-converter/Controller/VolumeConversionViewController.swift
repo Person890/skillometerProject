@@ -94,7 +94,7 @@ class VolumeConversionViewController: UIViewController, CustomNumericKeyboardDel
         if firstResponder != nil {
             activeTextField = firstResponder as! UITextField;
             
-            var activeTextFieldSuperView = activeTextField.superview!
+            let activeTextFieldSuperView = activeTextField.superview!
             
             if let info = notification.userInfo {
                 let keyboard:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
