@@ -52,8 +52,8 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         let pmFormula = NSMutableAttributedString()
         pmFormula.append(stringFormatter(text: "mp = ", location: 1, length: 1, type: "sub"))
         pmFormula.append(stringFormatter(text: "1.6726219 X "))
-        pmFormula.append(stringFormatter(text: "10-27", location: 2, length: 3, type: "sup"))
-        pmFormula.append(stringFormatter(text: " kg"))
+        pmFormula.append(stringFormatter(text: "10-27 ", location: 2, length: 3, type: "sup"))
+        pmFormula.append(stringFormatter(text: "kg"))
         let pm = Constant(name: "Proton Mass", formula: pmFormula, icon: UIImage(named: "ic_proton")!)
         
         // building neutron mass formula
@@ -61,8 +61,8 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         let nmFormula = NSMutableAttributedString()
         nmFormula.append(stringFormatter(text: "mn = ", location: 1, length: 1, type: "sub"))
         nmFormula.append(stringFormatter(text: "1.674929 X "))
-        nmFormula.append(stringFormatter(text: "10-27", location: 2, length: 3, type: "sup"))
-        nmFormula.append(stringFormatter(text: " kg"))
+        nmFormula.append(stringFormatter(text: "10-27 ", location: 2, length: 3, type: "sup"))
+        nmFormula.append(stringFormatter(text: "kg"))
         let nm = Constant(name: "Neutron Mass", formula: nmFormula, icon: UIImage(named: "ic_neutron")!)
         
         // building electric permittivity
@@ -80,8 +80,8 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         let mpFormula = NSMutableAttributedString()
         mpFormula.append(stringFormatter(text: "μ0 = ", location: 1, length: 1, type: "sub"))
         mpFormula.append(stringFormatter(text: "4π X "))
-        mpFormula.append(stringFormatter(text: "10−7", location: 2, length: 2, type: "sup"))
-        mpFormula.append(stringFormatter(text: " T m/A"))
+        mpFormula.append(stringFormatter(text: "10−7 ", location: 2, length: 2, type: "sup"))
+        mpFormula.append(stringFormatter(text: "T m/A"))
         let mp = Constant(name: "Magnetic Permeability", formula: mpFormula, icon: UIImage(named: "ic_magnetic")!)
         
         constants += [em, pm, nm, ep, mp]
@@ -116,6 +116,16 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         return cell
     }
     
+    // This function formats a string to make superscript and subscript
+    /// Usage:
+    ///
+    ///      stringFormatter(text: "μ0 = ", location: 1, length: 1, type: "sub")
+    ///
+    /// - Parameter text: text to format.
+    ///             location: location to start the formating.
+    ///             length: length of the formating text block.
+    ///             type: formating type i.e superscript or subscript.
+    /// - Returns: A formated text of type NSMutableAttributedString.
     func stringFormatter(text: String, location: Int = 0, length: Int = 0, type: String = "sup") -> NSMutableAttributedString {
         let font: UIFont? = UIFont(name: "Helvetica", size:20)
         let fontSupSub: UIFont? = UIFont(name: "Helvetica", size:10)
