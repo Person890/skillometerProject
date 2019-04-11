@@ -6,7 +6,7 @@
 
 # Built With
 
-<a href="https://swift.org/"><img src="./docs/readme-resources/swift-logo.svg" alt="swift" height="20" /></a>&nbsp;&nbsp;
+<a href="https://swift.org/"><img src="./docs/readme-resources/swift-logo.svg" alt="swift" height="40" /></a>&nbsp;&nbsp;
 
 # Contributors
 
