@@ -42,25 +42,25 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         // formula: me = 9.10938356 × 10-31 kg
         let emFormula = NSMutableAttributedString()
         emFormula.append(stringFormatter(text: "1 m = 3.28 ft = 39.97 inch\n", location: 1, length: 1, type: "sub"))
-        let em = Constant(name: "Distance", formula: emFormula, icon: UIImage(named: "ic_proton")!)
+        let em = Constant(name: "Distance", formula: emFormula)
         
         // building proton mass formula
         // formula: pm = 1.6726219 × 10-27 kg
         let pmFormula = NSMutableAttributedString()
         pmFormula.append(stringFormatter(text: "F = 9/5 C + 32 ", location: 1, length: 1, type: "sub"))
-        let pm = Constant(name: "Temperature", formula: pmFormula, icon: UIImage(named: "ic_proton")!)
+        let pm = Constant(name: "Temperature", formula: pmFormula)
         
         // building neutron mass formula
         // formula: nm = 1.674929 x 10-27 kg
         let nmFormula = NSMutableAttributedString()
         nmFormula.append(stringFormatter(text: "1 ml = 1 cc = 0.001 l", location: 1, length: 1, type: "sub"))
-        let nm = Constant(name: "Volume", formula: nmFormula, icon: UIImage(named: "ic_neutron")!)
+        let nm = Constant(name: "Volume", formula: nmFormula)
         
         // building electric permittivity
         // formula: ep = 8.854 × 10−12 C2/N m2
         let epFormula = NSMutableAttributedString()
         epFormula.append(stringFormatter(text: "1 mph = 1.60934 kmh ", location: 1, length: 1, type: "sub"))
-        let ep = Constant(name: "Speed", formula: epFormula, icon: UIImage(named: "ic_electric")!)
+        let ep = Constant(name: "Speed", formula: epFormula)
         
 
         constants += [em, pm, nm, ep]
