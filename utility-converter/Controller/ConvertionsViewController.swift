@@ -25,11 +25,11 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
     ///
     ///      generateConversions()
     func generateConversions() {
-        let weight = Conversion(name: "Weight", icon: UIImage(named: "ic_weight")!, segueID: "goToWeightConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
-        let temperature = Conversion(name: "Temperature", icon: UIImage(named: "ic_temperature")!, segueID: "goToTemperatureConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
-        let volume = Conversion(name: "Volume", icon: UIImage(named: "ic_volume")!, segueID: "goToVolumeConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
-        let distance = Conversion(name: "Distance", icon: UIImage(named: "ic_distance")!, segueID: "goToDistanceConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
-        let speed = Conversion(name: "Speed", icon: UIImage(named: "ic_speed")!, segueID: "goToSpeedConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let weight = Conversion(name: "Weight", segueID: "goToWeightConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let temperature = Conversion(name: "Tempertaure", segueID: "goToTemperatureConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let volume = Conversion(name: "Volume", segueID: "goToVolumeConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let distance = Conversion(name: "Distance", segueID: "goToDistanceConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
+        let speed = Conversion(name: "Speed", segueID: "goToSpeedConversion", cellColour: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.00))
         
         conversions += [weight, temperature, volume, distance, speed]
     }
@@ -43,6 +43,7 @@ class ConvertionsViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ConversionViewCell
         cell.conversionName.text = conversions[indexPath.row].getConversionName()
+//        cell.conversionIcon.image = conversions[indexPath.row].getConversionIcon()
         
         //Card(cell) styles
         cell.contentView.backgroundColor = conversions[indexPath.row].getCellColour()

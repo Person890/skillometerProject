@@ -82,7 +82,7 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ConstantTableViewCell
         cell.constantName.text = constants[indexPath.row].getName()
         cell.constantFormula.attributedText = constants[indexPath.row].getFormula()
-        cell.constantIcon.image = constants[indexPath.row].getIcon()
+        //cell.constantIcon.image = constants[indexPath.row].getIcon()
         
         // Card(cell) styles
         cell.isUserInteractionEnabled = false

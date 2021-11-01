@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     
     var histories = [History]()
     var conversionType = WEIGHTS_USER_DEFAULTS_KEY
-    var icon: UIImage = UIImage(named: "ic_weight")!
+    //var icon: UIImage = UIImage(named: "ic_weight")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         super.viewWillAppear(animated)
         
         // generate the history of the initial segment
-        generateHistory(type: conversionType, icon: icon)
+        //generateHistory(type: conversionType, icon: icon)
         DispatchQueue.main.async { self.tableView.reloadData() }
         
         // checks if the clear button should be visible
@@ -37,6 +37,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     /// conversion history.
     ///
     /// - Parameter sender: The UISegmentedControl.
+    /*
     @IBAction func handleSegmentControlIndexChange(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -62,7 +63,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         // checks if the clear button should be visible
         toggleHistoryClearButtonVisibility()
     }
-    
+    */
     /// This function generates the saved conversion history.
     /// It gains access to the user defaults and populates the
     /// history array.
@@ -133,7 +134,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
             self.present(alert, animated: true, completion: nil)
             
             // refetch hitory and reload table
-            generateHistory(type: conversionType, icon: icon)
+            //generateHistory(type: conversionType, icon: icon)
             DispatchQueue.main.async{ self.tableView.reloadData() }
             toggleHistoryClearButtonVisibility()
         }
