@@ -1,5 +1,4 @@
 <p align="center">
-    <img style="display:block;text-align:center" src="./docs/logos/UC-logo.png" alt="logo-text" width="200" />
     <h1 align="center">Utitlity Converter</h1>
     <p align="center" style="font-size: 1.2rem;">A conceptual implementation of a Unit converter app for the iPhone.</p>
 </p>
