@@ -1,11 +1,3 @@
-//
-//  UITableView+EmptyTable.swift
-//  utility-converter
-//
-//  Created by Brion Silva on 09/04/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -19,7 +11,7 @@ extension UITableView {
         messageLabel.textColor = messageColour
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
-        messageLabel.font = UIFont(name: "System", size: 15)
+        messageLabel.font = UIFont(name: "System", size: 25)
         messageLabel.sizeToFit()
         
         self.backgroundView = messageLabel;

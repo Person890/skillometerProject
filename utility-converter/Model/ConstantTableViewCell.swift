@@ -1,11 +1,3 @@
-//
-//  ConstantTableViewCell.swift
-//  utility-converter
-//
-//  Created by Brion Silva on 09/04/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
-//
-
 import UIKit
 
 class ConstantTableViewCell: UITableViewCell {

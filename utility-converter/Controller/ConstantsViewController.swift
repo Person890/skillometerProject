@@ -1,10 +1,3 @@
-//
-//  ConstantsViewController.swift
-//  utility-converter
-//
-//  Created by Brion Silva on 26/03/2019.
-//  Copyright © 2019 Brion Silva. All rights reserved.
-//
 
 import UIKit
 
@@ -26,16 +19,7 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         super.viewWillAppear(animated)
     }
     
-    /// This function generates the saved conversion history.
-    /// It gains access to the user defaults and populates the
-    /// history array.
-    ///
-    /// Usage:
-    ///
-    ///      generateHistory(type: conversionType, icon: icon)
-    ///
-    /// - Parameter type: Conversion type.
-    ///             icon: Icon for the table cell.
+    
     func generateConstants() {
         
         // building electron mass formula
@@ -95,19 +79,10 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
         return cell
     }
     
-    // This function formats a string to make superscript and subscript
-    /// Usage:
-    ///
-    ///      stringFormatter(text: "μ0 = ", location: 1, length: 1, type: "sub")
-    ///
-    /// - Parameter text: text to format.
-    ///             location: location to start the formating.
-    ///             length: length of the formating text block.
-    ///             type: formating type i.e superscript or subscript.
-    /// - Returns: A formated text of type NSMutableAttributedString.
+
     func stringFormatter(text: String, location: Int = 0, length: Int = 0, type: String = "sup") -> NSMutableAttributedString {
         let font: UIFont? = UIFont(name: "Helvetica", size:20)
-        let fontSupSub: UIFont? = UIFont(name: "Helvetica", size:10)
+        let fontSupSub: UIFont? = UIFont(name: "Helvetica", size:20)
         let attString: NSMutableAttributedString = NSMutableAttributedString(string: text, attributes: [.font:font!])
         attString.setAttributes([.font:fontSupSub!,.baselineOffset: type == "sup" ? 10 : -10], range: NSRange(location: location,length: length))
         return attString;
