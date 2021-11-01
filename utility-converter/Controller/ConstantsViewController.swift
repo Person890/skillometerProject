@@ -81,8 +81,8 @@ class ConstantsViewController: UIViewController ,UITableViewDataSource,UITableVi
     
 
     func stringFormatter(text: String, location: Int = 0, length: Int = 0, type: String = "sup") -> NSMutableAttributedString {
-        let font: UIFont? = UIFont(name: "Helvetica", size:20)
-        let fontSupSub: UIFont? = UIFont(name: "Helvetica", size:20)
+        let font: UIFont? = UIFont(name: "Helvetica", size:40)
+        let fontSupSub: UIFont? = UIFont(name: "Helvetica", size:40)
         let attString: NSMutableAttributedString = NSMutableAttributedString(string: text, attributes: [.font:font!])
         attString.setAttributes([.font:fontSupSub!,.baselineOffset: type == "sup" ? 10 : -10], range: NSRange(location: location,length: length))
         return attString;
