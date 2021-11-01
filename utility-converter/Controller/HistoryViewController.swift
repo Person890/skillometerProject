@@ -25,7 +25,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
         super.viewWillAppear(animated)
         
         // generate the history of the initial segment
-        //generateHistory(type: conversionType, icon: icon)
+        generateHistory(type: conversionType)
         DispatchQueue.main.async { self.tableView.reloadData() }
         
         // checks if the clear button should be visible
@@ -37,33 +37,33 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     /// conversion history.
     ///
     /// - Parameter sender: The UISegmentedControl.
-    /*
+    
     @IBAction func handleSegmentControlIndexChange(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             conversionType = WEIGHTS_USER_DEFAULTS_KEY
-            icon = UIImage(named: "ic_weight")!
+            //icon = UIImage(named: "ic_weight")!
         case 1:
             conversionType = TEMP_USER_DEFAULTS_KEY
-            icon = UIImage(named: "ic_temperature")!
+            //icon = UIImage(named: "ic_temperature")!
         case 2:
             conversionType = VOLUME_USER_DEFAULTS_KEY
-            icon = UIImage(named: "ic_volume")!
+            //icon = UIImage(named: "ic_volume")!
         case 3:
             conversionType = SPEED_USER_DEFAULTS_KEY
-            icon = UIImage(named: "ic_speed")!
+            //icon = UIImage(named: "ic_speed")!
         default:
             break
         }
         
         // generate the gistory and reload the table
-        generateHistory(type: conversionType, icon: icon)
+        generateHistory(type: conversionType)
         DispatchQueue.main.async { self.tableView.reloadData() }
         
         // checks if the clear button should be visible
         toggleHistoryClearButtonVisibility()
     }
-    */
+    
     /// This function generates the saved conversion history.
     /// It gains access to the user defaults and populates the
     /// history array.
@@ -74,13 +74,13 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     ///
     /// - Parameter type: Conversion type.
     ///             icon: Icon for the table cell.
-    func generateHistory(type: String, icon: UIImage) {
+    func generateHistory(type: String) {
         histories = []
         let historyList = UserDefaults.standard.value(forKey: conversionType) as? [String]
         
         if historyList?.count ?? 0 > 0 {
             for conersion in historyList! {
-                let history = History(type: type,icon: icon,conversion: conersion)
+                let history = History(type: type, conversion: conersion)
                 histories += [history]
             }
         }
@@ -107,7 +107,7 @@ class HistoryViewController: UIViewController ,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HistoryTableViewCell
         cell.historyConversionText.text = histories[indexPath.row].getHistoryConversion()
-        cell.historyTypeIcon.image = histories[indexPath.row].getHistoryIcon()
+        //cell.historyTypeIcon.image = histories[indexPath.row].getHistoryIcon()
         
         // Card(cell) styles
         cell.isUserInteractionEnabled = false
