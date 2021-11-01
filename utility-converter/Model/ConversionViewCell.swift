@@ -10,6 +10,5 @@ import UIKit
 
 class ConversionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var conversionIcon: UIImageView!
     @IBOutlet weak var conversionName: UILabel!
 }

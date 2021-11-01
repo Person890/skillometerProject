@@ -26,10 +26,6 @@ class Conversion {
         return name
     }
     
-    func getConversionIcon() -> UIImage {
-        return icon
-    }
-    
     func getSegueID() -> String {
         return segueID
     }
