@@ -45,10 +45,6 @@ alt="App Screenshots">
 
 <a href="https://swift.org/"><img src="./docs/readme-resources/swift-logo.svg" alt="swift" height="40" /></a>&nbsp;&nbsp;
 
-# Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 | [<img src="https://avatars3.githubusercontent.com/u/25959096?v=4" width="80px;"/><br /><sub><b>Brion Mario</b></sub>](https://www.linkedin.com/in/brion-mario/)<br />[💻](https://github.com/apareciumlabs/wfwf-jquery-mobile-fe/commits?author=brionmario "Code") [📖](https://github.com/apareciumlabs/wfwf-jquery-mobile-fe/commits?author=brionmario "Documentation") [🐛](https://github.com/apareciumlabs/wfwf-jquery-mobile-fe/issues?q=author%3Abrionmario "Bug reports") [⚠️](https://github.com/apareciumlabs/wfwf-jquery-mobile-fe/commits?author=brionmario "Tests") |
